@@ -1,0 +1,9 @@
+# rust build
+target/
+
+# IDE stuff
+.idea
+
+# vim backup
+*.swo
+*.swp
