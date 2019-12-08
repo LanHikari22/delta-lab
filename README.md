@@ -1,5 +1,5 @@
 
-<a href="https://github.com/LanHikari22/puzzles"><img src="https://ibb.co/jHpYD4R" title="Anime Coding Puzzles" alt="git"></a>
+<a href="https://github.com/LanHikari22/puzzles"><img src="https://i.ibb.co/fQcWH0v/38742837-removebg-preview.png" title="Anime Coding Puzzles" alt="404 cute anime programming image not found!"></a>
 
 
 # Puzzles
