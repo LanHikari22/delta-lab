@@ -4,16 +4,12 @@
 
 # Puzzles
 
-> A repository hosting my solutions to various programming challenges
+A repository hosting my solutions to various programming challenges
 
 ---
 
 ## Table of Contents (Optional)
-
-> If your `README` has a lot of info, section headers might be nice.
-
 - [Sources](#sources)
-
 
 ---
 
