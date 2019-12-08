@@ -63,7 +63,7 @@ callback	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6
 cancel	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/gen_impl.rs	/^    pub unsafe fn cancel(&mut self) {$/;"	f
 cause	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/stack/mod.rs	/^    fn cause(&self) -> Option<&dyn Error> {$/;"	f
 check_err	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/gen_impl.rs	/^    fn check_err(cause: Box<dyn Any + Send + 'static>) {$/;"	f
-check_positions_in_bound	/home/lan/dev/puzzles/advent-of-code/day2/src/intcode.rs	/^    fn check_positions_in_bound(p1_pos: u8, p2_pos: u8, res_pos: u8, tape_length: usize) -> Result<(), TapeExecutionError> {$/;"	f
+check_positions_in_bound	/home/lan/dev/puzzles/advent-of-code/day2/src/intcode.rs	/^    fn check_positions_in_bound(p1_pos: i32, p2_pos: i32, res_pos: i32, tape_length: usize) -> Result<(), TapeExecutionError> {$/;"	f
 co_ctx	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/rt.rs	/^    pub fn co_ctx(&self) -> Option<&'static mut Context> {$/;"	f
 co_get_para	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/rt.rs	/^    pub fn co_get_para<A>(&mut self) -> Option<A> {$/;"	f
 co_get_yield	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/yield_.rs	/^pub fn co_get_yield<A: Any>() -> Option<A> {$/;"	f
@@ -83,8 +83,8 @@ empty	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19
 empty	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/rt.rs	/^    fn empty() -> Self {$/;"	f
 empty	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/stack/mod.rs	/^    pub fn empty() -> Stack {$/;"	f
 end	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/stack/mod.rs	/^    pub fn end(&self) -> *mut usize {$/;"	f
-execute_instruction	/home/lan/dev/puzzles/advent-of-code/day2/src/intcode.rs	/^pub fn execute_instruction(inst: &Instruction, output_tape: &mut Vec<u8>) -> Result<(), TapeExecutionError> {$/;"	f
-execute_tape	/home/lan/dev/puzzles/advent-of-code/day2/src/intcode.rs	/^pub fn execute_tape(tape: &[u8]) -> Result<Vec<u8>, TapeExecutionError>{$/;"	f
+execute_instruction	/home/lan/dev/puzzles/advent-of-code/day2/src/intcode.rs	/^pub fn execute_instruction(inst: &Instruction, output_tape: &mut Vec<i32>) -> Result<(), TapeExecutionError> {$/;"	f
+execute_tape	/home/lan/dev/puzzles/advent-of-code/day2/src/intcode.rs	/^pub fn execute_tape(tape: &[i32]) -> Result<Vec<i32>, TapeExecutionError>{$/;"	f
 fmt	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/gen_impl.rs	/^    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {$/;"	f
 fmt	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/stack/mod.rs	/^    fn fmt(&self, fmt: &mut Formatter) -> FmtResult {$/;"	f
 gen_init	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/gen_impl.rs	/^fn gen_init(_: usize, f: *mut usize) -> ! {$/;"	f
@@ -155,12 +155,12 @@ raw_send	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6
 raw_yield	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/scope.rs	/^    fn raw_yield(&mut self, env: &ContextStack, context: &mut Context, v: T) {$/;"	f
 raw_yield	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/yield_.rs	/^fn raw_yield<T: Any>(env: &ContextStack, context: &mut Context, v: T) {$/;"	f
 raw_yield_now	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/yield_.rs	/^pub fn raw_yield_now(env: &ContextStack, cur: &mut Context) {$/;"	f
-read_instruction	/home/lan/dev/puzzles/advent-of-code/day2/src/intcode.rs	/^pub fn read_instruction(tape: &[u8]) -> Result<Instruction, InstructionErrorCode> {$/;"	f
-read_next_instruction	/home/lan/dev/puzzles/advent-of-code/day2/src/intcode.rs	/^fn read_next_instruction<'a>(tape: &'a [u8]) -> generator::Generator<'a, (), Result<Instruction, InstructionErrorCode>> {$/;"	f
-read_tape	/home/lan/dev/puzzles/advent-of-code/day2/src/intcode.rs	/^pub fn read_tape(input_path: &str) -> Vec<u8> {$/;"	f
+read_instruction	/home/lan/dev/puzzles/advent-of-code/day2/src/intcode.rs	/^pub fn read_instruction(tape: &[i32]) -> Result<Instruction, InstructionErrorCode> {$/;"	f
+read_next_instruction	/home/lan/dev/puzzles/advent-of-code/day2/src/intcode.rs	/^fn read_next_instruction<'a>(tape: &'a [i32]) -> generator::Generator<'a, (), Result<Instruction, InstructionErrorCode>> {$/;"	f
+read_tape	/home/lan/dev/puzzles/advent-of-code/day2/src/intcode.rs	/^pub fn read_tape(input_path: &str) -> Vec<i32> {$/;"	f
 resume	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/gen_impl.rs	/^    pub fn resume(&mut self) -> Option<T> {$/;"	f
 resume_gen	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/gen_impl.rs	/^    fn resume_gen(&mut self) {$/;"	f
-run_test	/home/lan/dev/puzzles/advent-of-code/day2/src/intcode.rs	/^        fn run_test(tape: &[u8], instructions: &[Result<Instruction, InstructionErrorCode>]) {$/;"	f
+run_test	/home/lan/dev/puzzles/advent-of-code/day2/src/intcode.rs	/^        fn run_test(tape: &[i32], instructions: &[Result<Instruction, InstructionErrorCode>]) {$/;"	f
 scoped_init	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/gen_impl.rs	/^    pub fn scoped_init<F: FnOnce(Scope<'a, A, T>) -> T + 'a>(&mut self, f: F)$/;"	f
 send	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/gen_impl.rs	/^    pub fn send(&mut self, para: A) -> T {$/;"	f
 set_local_data	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/gen_impl.rs	/^    pub fn set_local_data(&mut self, data: *mut u8) {$/;"	f
