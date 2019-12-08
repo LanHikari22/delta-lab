@@ -18,10 +18,5 @@
 ---
 
 ## Sources
-**Advent of Code**
-- <a href="https://adventofcode.com/2019/">
+<a href="https://adventofcode.com/2019/">**Advent of Code**</a>
 
-## Features
-## Usage (Optional)
-## Documentation (Optional)
-## Tests (Optional)
