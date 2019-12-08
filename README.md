@@ -8,7 +8,7 @@ A repository hosting my solutions to various programming challenges
 
 ---
 
-## Table of Contents (Optional)
+## Table of Contents
 - [Sources](#sources)
 
 ---
