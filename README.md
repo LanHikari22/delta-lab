@@ -1,9 +1,6 @@
 
-<a href="http://fvcproductions.com"><img src="https://cdn.imgbin.com/23/19/21/imgbin-computer-programming-anime-programming-language-thread-animation-gril-jw4L7FsVGNQDLdePHj8cjC1wC.jpg" title="FVCproductions" alt="FVCproductions"></a>
+<a href="https://github.com/LanHikari22/puzzles"><img src="https://cdn.imgbin.com/23/19/21/imgbin-computer-programming-anime-programming-language-thread-animation-gril-jw4L7FsVGNQDLdePHj8cjC1wC.jpg" title="Anime Coding Puzzles" alt="git"></a>
 
-<!-- [![FVCproductions](https://avatars1.githubusercontent.com/u/4284691?v=3&s=200)](http://fvcproductions.com) -->
-
-<!-- ***INSERT GRAPHIC HERE (include hyperlink in image)*** -->
 
 # Puzzles
 
@@ -16,15 +13,13 @@
 > If your `README` has a lot of info, section headers might be nice.
 
 - [Sources](#sources)
-- [Features](#features)
 
 
 ---
 
 ## Sources
- **lol**
- - lol
- - lol
+**Advent of Code**
+- <a href="https://adventofcode.com/2019/">
 
 ## Features
 ## Usage (Optional)
