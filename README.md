@@ -1,5 +1,5 @@
 
-<a href="https://github.com/LanHikari22/puzzles"><img src="https://cdn.imgbin.com/23/19/21/imgbin-computer-programming-anime-programming-language-thread-animation-gril-jw4L7FsVGNQDLdePHj8cjC1wC.jpg" title="Anime Coding Puzzles" alt="git"></a>
+<a href="https://github.com/LanHikari22/puzzles"><img src="https://ibb.co/jHpYD4R" title="Anime Coding Puzzles" alt="git"></a>
 
 
 # Puzzles
