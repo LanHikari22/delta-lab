@@ -5,25 +5,32 @@
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
 HorizontalSegment	/home/lan/dev/puzzles/advent-of-code/day3/src/wire_circuit.rs	/^pub struct HorizontalSegment {$/;"	s
+INPUT_PATH	/home/lan/dev/puzzles/advent-of-code/day3/src/main.rs	/^        const INPUT_PATH: &str = "wire_paths";$/;"	c
 INPUT_PATH	/home/lan/dev/puzzles/advent-of-code/day3/src/main.rs	/^const INPUT_PATH: &str = "wire_paths";$/;"	c
 INPUT_PATH	/home/lan/dev/puzzles/advent-of-code/day3/src/wire_circuit.rs	/^        const INPUT_PATH: &str = "wire_paths";$/;"	c
 PathSegment	/home/lan/dev/puzzles/advent-of-code/day3/src/wire_circuit.rs	/^pub enum PathSegment {$/;"	g
 Point	/home/lan/dev/puzzles/advent-of-code/day3/src/wire_circuit.rs	/^pub struct Point {$/;"	s
+TestData	/home/lan/dev/puzzles/advent-of-code/day3/src/wire_circuit.rs	/^    struct TestData {$/;"	s
 VerticalSegment	/home/lan/dev/puzzles/advent-of-code/day3/src/wire_circuit.rs	/^pub struct VerticalSegment {$/;"	s
 WirePathReadingError	/home/lan/dev/puzzles/advent-of-code/day3/src/wire_circuit.rs	/^pub enum WirePathReadingError {$/;"	g
 calc_manhattan_distance	/home/lan/dev/puzzles/advent-of-code/day3/src/wire_circuit.rs	/^pub fn calc_manhattan_distance(p: &Point) -> i32 {$/;"	f
 calc_segment_collision	/home/lan/dev/puzzles/advent-of-code/day3/src/wire_circuit.rs	/^pub fn calc_segment_collision(hori_seg: &HorizontalSegment, vert_seg: &VerticalSegment) -> Result<Point, ()> {$/;"	f
 char_in	/home/lan/dev/puzzles/advent-of-code/day3/src/common.rs	/^pub fn char_in(c: char, v: &[char]) -> bool {$/;"	f
-dotest	/home/lan/dev/puzzles/advent-of-code/day3/src/wire_circuit.rs	/^        fn dotest(path1: &str, path2: &str, expected: i32) {$/;"	f
+count_steps_to_intersection	/home/lan/dev/puzzles/advent-of-code/day3/src/wire_circuit.rs	/^pub fn count_steps_to_intersection(subpath: &[PathSegment], intersection: &Point) -> i32 {$/;"	f
 find_distance_of_closest_intersection	/home/lan/dev/puzzles/advent-of-code/day3/src/wire_circuit.rs	/^pub fn find_distance_of_closest_intersection(intersections: &[Point]) -> Option<i32> {$/;"	f
+find_intersection_segments	/home/lan/dev/puzzles/advent-of-code/day3/src/wire_circuit.rs	/^pub fn find_intersection_segments(path1: &[PathSegment], path2: &[PathSegment]) -> Vec<(HorizontalSegment, VerticalSegment)> {$/;"	f
+find_intersection_with_shortest_steps	/home/lan/dev/puzzles/advent-of-code/day3/src/wire_circuit.rs	/^pub fn find_intersection_with_shortest_steps(path1: &[PathSegment], path2: &[PathSegment]) -> (Point, i32) {$/;"	f
 find_intersections	/home/lan/dev/puzzles/advent-of-code/day3/src/wire_circuit.rs	/^pub fn find_intersections(path1: &[PathSegment], path2: &[PathSegment]) -> Vec<Point> {$/;"	f
+find_intersections_and_steps	/home/lan/dev/puzzles/advent-of-code/day3/src/wire_circuit.rs	/^pub fn find_intersections_and_steps(path1: &[PathSegment], path2: &[PathSegment]) -> Vec<(Point, i32)> {$/;"	f
 get_one	/home/lan/dev/puzzles/advent-of-code/day3/src/main.rs	/^fn get_one() -> i32 {$/;"	f
 main	/home/lan/dev/puzzles/advent-of-code/day3/src/main.rs	/^fn main() {$/;"	f
 main	/home/lan/dev/puzzles/advent-of-code/day3/src/wire_circuit.rs	/^    fn main() {$/;"	f
 read_wire_path	/home/lan/dev/puzzles/advent-of-code/day3/src/wire_circuit.rs	/^pub fn read_wire_path(path_directions: &str) -> Result<Vec<PathSegment>, WirePathReadingError> {$/;"	f
 read_wire_paths	/home/lan/dev/puzzles/advent-of-code/day3/src/wire_circuit.rs	/^pub fn read_wire_paths(path_directions_file: &str) -> Result<Vec<Vec<PathSegment>>, WirePathReadingError> {$/;"	f
+run_test	/home/lan/dev/puzzles/advent-of-code/day3/src/wire_circuit.rs	/^        fn run_test(path1: &str, path2: &str, expected: i32) {$/;"	f
 str_in	/home/lan/dev/puzzles/advent-of-code/day3/src/common.rs	/^pub fn str_in(s: &str, v: &[&str]) -> bool {$/;"	f
-test_calc_manhattan_distance	/home/lan/dev/puzzles/advent-of-code/day3/src/wire_circuit.rs	/^    fn test_calc_manhattan_distance() {$/;"	f
 test_calc_segment_collision	/home/lan/dev/puzzles/advent-of-code/day3/src/wire_circuit.rs	/^    fn test_calc_segment_collision() {$/;"	f
-test_provided	/home/lan/dev/puzzles/advent-of-code/day3/src/wire_circuit.rs	/^    fn test_provided() {$/;"	f
+test_data	/home/lan/dev/puzzles/advent-of-code/day3/src/wire_circuit.rs	/^    static test_data: &[TestData] = &[$/;"	c
+test_find_distance_of_closest_intersection	/home/lan/dev/puzzles/advent-of-code/day3/src/wire_circuit.rs	/^    fn test_find_distance_of_closest_intersection() {$/;"	f
+test_find_intersection_steps	/home/lan/dev/puzzles/advent-of-code/day3/src/wire_circuit.rs	/^    fn test_find_intersection_steps() {$/;"	f
 tests	/home/lan/dev/puzzles/advent-of-code/day3/src/wire_circuit.rs	/^mod tests {$/;"	m
