@@ -1,0 +1,186 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+Context	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/rt.rs	/^pub struct Context {$/;"	s
+ContextStack	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/rt.rs	/^pub struct ContextStack {$/;"	s
+DEFAULT_STACK_SIZE	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/gen_impl.rs	/^pub const DEFAULT_STACK_SIZE: usize = 0x1000;$/;"	c
+Error	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/rt.rs	/^pub enum Error {$/;"	g
+Generator	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/gen_impl.rs	/^pub type Generator<'a, A, T> = Box<GeneratorImpl<'a, A, T>>;$/;"	T
+GeneratorImpl	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/gen_impl.rs	/^pub struct GeneratorImpl<'a, A, T> {$/;"	s
+Gn	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/gen_impl.rs	/^pub struct Gn<A = ()> {$/;"	s
+InitFn	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/reg_context.rs	/^pub type InitFn = fn(usize, *mut usize) -> !;$/;"	T
+Item	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/gen_impl.rs	/^    type Item = T;$/;"	T
+MAP_STACK	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/stack/unix.rs	/^const MAP_STACK: libc::c_int = 0;$/;"	c
+MAP_STACK	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/stack/unix.rs	/^const MAP_STACK: libc::c_int = libc::MAP_STACK;$/;"	c
+MIN_STACK	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/reg_context.rs	/^    const MIN_STACK: usize = 1024;$/;"	c
+NULL	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/stack/unix.rs	/^    const NULL: *mut libc::c_void = 0 as *mut libc::c_void;$/;"	c
+NULL	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/stack/windows.rs	/^    const NULL: LPVOID = 0 as LPVOID;$/;"	c
+PAGE_SIZE	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/stack/unix.rs	/^    static PAGE_SIZE: AtomicUsize = AtomicUsize::new(0);$/;"	c
+PAGE_SIZE	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/stack/windows.rs	/^    static PAGE_SIZE: AtomicUsize = AtomicUsize::new(0);$/;"	c
+PASSWORD_RANGE	/home/lan/dev/puzzles/advent-of-code/day4/src/main.rs	/^const PASSWORD_RANGE: (u32, u32) = (240920, 789857);$/;"	c
+PASSWORD_RANGE	/home/lan/dev/puzzles/advent-of-code/day4/src/password_search.rs	/^        const PASSWORD_RANGE: (u32, u32) = (240920, 789857);$/;"	c
+PROT	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/stack/unix.rs	/^    const PROT: libc::c_int = libc::PROT_READ | libc::PROT_WRITE;$/;"	c
+PROT	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/stack/windows.rs	/^    const PROT: DWORD = PAGE_READWRITE;$/;"	c
+ROOT_CONTEXT	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/rt.rs	/^    static ROOT_CONTEXT: Box<Context> = {$/;"	c
+RUSTRT_R12	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/detail/x86_64_unix.rs	/^    const RUSTRT_R12: usize = 4;$/;"	c
+RUSTRT_R12	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/detail/x86_64_windows.rs	/^    const RUSTRT_R12: usize = 4;$/;"	c
+RUSTRT_R13	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/detail/x86_64_unix.rs	/^    const RUSTRT_R13: usize = 5;$/;"	c
+RUSTRT_R13	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/detail/x86_64_windows.rs	/^    const RUSTRT_R13: usize = 5;$/;"	c
+RUSTRT_R14	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/detail/x86_64_unix.rs	/^    const RUSTRT_R14: usize = 6;$/;"	c
+RUSTRT_R14	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/detail/x86_64_windows.rs	/^    const RUSTRT_R14: usize = 6;$/;"	c
+RUSTRT_RBP	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/detail/x86_64_unix.rs	/^    const RUSTRT_RBP: usize = 2;$/;"	c
+RUSTRT_RBP	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/detail/x86_64_windows.rs	/^    const RUSTRT_RBP: usize = 2;$/;"	c
+RUSTRT_RSP	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/detail/x86_64_unix.rs	/^    const RUSTRT_RSP: usize = 1;$/;"	c
+RUSTRT_RSP	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/detail/x86_64_windows.rs	/^    const RUSTRT_RSP: usize = 1;$/;"	c
+RUSTRT_STACK_BASE	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/detail/x86_64_windows.rs	/^    const RUSTRT_STACK_BASE: usize = 11;$/;"	c
+RUSTRT_STACK_DEALLOC	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/detail/x86_64_windows.rs	/^    const RUSTRT_STACK_DEALLOC: usize = 13;$/;"	c
+RUSTRT_STACK_LIMIT	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/detail/x86_64_windows.rs	/^    const RUSTRT_STACK_LIMIT: usize = 12;$/;"	c
+RegContext	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/reg_context.rs	/^pub struct RegContext {$/;"	s
+Registers	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/detail/x86_64_unix.rs	/^pub struct Registers {$/;"	s
+Registers	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/detail/x86_64_windows.rs	/^pub struct Registers {$/;"	s
+Scope	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/scope.rs	/^pub struct Scope<'a, A, T> {$/;"	s
+Stack	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/stack/mod.rs	/^pub struct Stack {$/;"	s
+StackError	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/stack/mod.rs	/^pub enum StackError {$/;"	g
+SysStack	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/stack/mod.rs	/^pub struct SysStack {$/;"	s
+TYPE	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/stack/unix.rs	/^    const TYPE: libc::c_int = libc::MAP_PRIVATE | libc::MAP_ANON | MAP_STACK;$/;"	c
+TYPE	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/stack/windows.rs	/^    const TYPE: DWORD = MEM_COMMIT | MEM_RESERVE;$/;"	c
+TYPE	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/stack/windows.rs	/^    const TYPE: DWORD = PAGE_READONLY | PAGE_GUARD;$/;"	c
+XMM	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/detail/x86_64_windows.rs	/^struct XMM(u32, u32, u32, u32);$/;"	s
+align_down	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/detail/mod.rs	/^fn align_down(sp: *mut usize) -> *mut usize {$/;"	f
+allocate	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/stack/mod.rs	/^    fn allocate(mut size: usize, protected: bool) -> Result<SysStack, StackError> {$/;"	f
+allocate_stack	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/stack/unix.rs	/^pub unsafe fn allocate_stack(size: usize) -> io::Result<SysStack> {$/;"	f
+allocate_stack	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/stack/windows.rs	/^pub unsafe fn allocate_stack(size: usize) -> io::Result<SysStack> {$/;"	f
+asm_impl	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/detail/x86_64_unix.rs	/^mod asm_impl {$/;"	m
+asm_impl	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/detail/x86_64_windows.rs	/^mod asm_impl {$/;"	m
+begin	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/stack/mod.rs	/^    pub fn begin(&self) -> *mut usize {$/;"	f
+bootstrap_green_task	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/detail/x86_64_unix.rs	/^    pub fn bootstrap_green_task();$/;"	f
+bootstrap_green_task	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/detail/x86_64_windows.rs	/^    pub fn bootstrap_green_task();$/;"	f
+bottom	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/stack/mod.rs	/^    pub fn bottom(&self) -> *mut c_void {$/;"	f
+callback	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/reg_context.rs	/^        fn callback() {$/;"	f
+cancel	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/gen_impl.rs	/^    pub unsafe fn cancel(&mut self) {$/;"	f
+cause	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/stack/mod.rs	/^    fn cause(&self) -> Option<&dyn Error> {$/;"	f
+check_err	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/gen_impl.rs	/^    fn check_err(cause: Box<dyn Any + Send + 'static>) {$/;"	f
+cluster_same_digits	/home/lan/dev/puzzles/advent-of-code/day4/src/password_search.rs	/^pub fn cluster_same_digits(i: u32) -> Vec<(u32, u32)> {$/;"	f
+co_ctx	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/rt.rs	/^    pub fn co_ctx(&self) -> Option<&'static mut Context> {$/;"	f
+co_get_para	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/rt.rs	/^    pub fn co_get_para<A>(&mut self) -> Option<A> {$/;"	f
+co_get_yield	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/yield_.rs	/^pub fn co_get_yield<A: Any>() -> Option<A> {$/;"	f
+co_set_para	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/rt.rs	/^    pub fn co_set_para<A>(&mut self, data: A) {$/;"	f
+co_set_para	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/yield_.rs	/^pub fn co_set_para<A: Any>(para: A) {$/;"	f
+co_set_ret	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/rt.rs	/^    pub fn co_set_ret<T>(&mut self, v: T) {$/;"	f
+co_yield_with	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/yield_.rs	/^pub fn co_yield_with<T: Any>(v: T) {$/;"	f
+compute_possible_password_combinations	/home/lan/dev/puzzles/advent-of-code/day4/src/password_search.rs	/^pub fn compute_possible_password_combinations(password_range: (u32, u32)) -> Vec<u32> {$/;"	f
+current	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/rt.rs	/^    pub fn current() -> ContextStack {$/;"	f
+deallocate_stack	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/stack/unix.rs	/^pub unsafe fn deallocate_stack(ptr: *mut c_void, size: usize) {$/;"	f
+deallocate_stack	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/stack/windows.rs	/^pub unsafe fn deallocate_stack(ptr: *mut c_void, _: usize) {$/;"	f
+description	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/stack/mod.rs	/^    fn description(&self) -> &str {$/;"	f
+done	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/yield_.rs	/^macro_rules! done {$/;"	d
+done	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/yield_.rs	/^pub fn done<T>() -> T {$/;"	f
+drop	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/gen_impl.rs	/^    fn drop(&mut self) {$/;"	f
+drop	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/stack/mod.rs	/^    fn drop(&mut self) {$/;"	f
+empty	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/reg_context.rs	/^    pub fn empty() -> RegContext {$/;"	f
+empty	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/rt.rs	/^    fn empty() -> Self {$/;"	f
+empty	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/stack/mod.rs	/^    pub fn empty() -> Stack {$/;"	f
+end	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/stack/mod.rs	/^    pub fn end(&self) -> *mut usize {$/;"	f
+fmt	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/gen_impl.rs	/^    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {$/;"	f
+fmt	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/stack/mod.rs	/^    fn fmt(&self, fmt: &mut Formatter) -> FmtResult {$/;"	f
+gen_init	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/gen_impl.rs	/^fn gen_init(_: usize, f: *mut usize) -> ! {$/;"	f
+get_local_data	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/gen_impl.rs	/^    pub fn get_local_data(&self) -> *mut u8 {$/;"	f
+get_local_data	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/rt.rs	/^pub fn get_local_data() -> *mut u8 {$/;"	f
+get_panic_data	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/gen_impl.rs	/^    pub fn get_panic_data(&mut self) -> Option<Box<dyn Any + Send>> {$/;"	f
+get_para	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/rt.rs	/^    pub fn get_para<A>(&mut self) -> Option<A>$/;"	f
+get_used_size	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/stack/mod.rs	/^    pub fn get_used_size(&self) -> usize {$/;"	f
+get_yield	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/scope.rs	/^    pub fn get_yield(&mut self) -> Option<A> {$/;"	f
+get_yield	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/yield_.rs	/^pub fn get_yield<A: Any>() -> Option<A> {$/;"	f
+has_strictly_two_adjacent_digits	/home/lan/dev/puzzles/advent-of-code/day4/src/password_search.rs	/^pub fn has_strictly_two_adjacent_digits(i: u32) -> bool {$/;"	f
+has_two_adjacent_digits	/home/lan/dev/puzzles/advent-of-code/day4/src/password_search.rs	/^pub fn has_two_adjacent_digits(i: u32) -> bool {$/;"	f
+init	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/gen_impl.rs	/^    pub fn init<F: FnOnce() -> T + 'a>(&mut self, f: F)$/;"	f
+init_context	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/gen_impl.rs	/^    pub fn init_context(&mut self) {$/;"	f
+init_fn	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/reg_context.rs	/^    fn init_fn(arg: usize, f: *mut usize) -> ! {$/;"	f
+init_root_p	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/rt.rs	/^unsafe fn init_root_p() {$/;"	f
+init_with	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/reg_context.rs	/^    pub fn init_with(&mut self, init: InitFn, arg: usize, start: *mut usize, stack: &Stack) {$/;"	f
+initialize_call_frame	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/detail/x86_64_unix.rs	/^pub fn initialize_call_frame($/;"	f
+initialize_call_frame	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/detail/x86_64_windows.rs	/^pub fn initialize_call_frame($/;"	f
+is_done	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/gen_impl.rs	/^    pub fn is_done(&self) -> bool {$/;"	f
+is_generator	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/rt.rs	/^    pub fn is_generator(&self) -> bool {$/;"	f
+is_generator	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/rt.rs	/^pub fn is_generator() -> bool {$/;"	f
+is_started	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/gen_impl.rs	/^    fn is_started(&self) -> bool {$/;"	f
+len	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/stack/mod.rs	/^    pub fn len(&self) -> usize {$/;"	f
+load	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/reg_context.rs	/^    pub fn load(to_context: &RegContext) {$/;"	f
+main	/home/lan/dev/puzzles/advent-of-code/day4/src/main.rs	/^fn main() {$/;"	f
+max_stack_size	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/stack/unix.rs	/^pub fn max_stack_size() -> usize {$/;"	f
+max_stack_size	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/stack/windows.rs	/^pub fn max_stack_size() -> usize {$/;"	f
+min_size	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/stack/mod.rs	/^    pub fn min_size() -> usize {$/;"	f
+min_stack_size	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/stack/unix.rs	/^pub fn min_stack_size() -> usize {$/;"	f
+min_stack_size	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/stack/windows.rs	/^pub fn min_stack_size() -> usize {$/;"	f
+mut	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/reg_context.rs	/^        static mut VAL: bool = false;$/;"	c
+mut	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/rt.rs	/^static mut ROOT_CONTEXT_P: *mut Context = ptr::null_mut();$/;"	c
+mut_offset	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/detail/mod.rs	/^fn mut_offset<T>(ptr: *mut T, count: isize) -> *mut T {$/;"	f
+new	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/detail/x86_64_unix.rs	/^    pub fn new() -> Registers {$/;"	f
+new	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/detail/x86_64_windows.rs	/^    pub fn new() -> Registers {$/;"	f
+new	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/detail/x86_64_windows.rs	/^    pub fn new(a: u32, b: u32, c: u32, d: u32) -> Self {$/;"	f
+new	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/gen_impl.rs	/^    pub fn new(size: usize) -> Box<Self> {$/;"	f
+new	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/gen_impl.rs	/^    pub fn new<'a, T: Any, F>(f: F) -> Generator<'a, A, T>$/;"	f
+new	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/reg_context.rs	/^    pub fn new(init: InitFn, arg: usize, start: *mut usize, stack: &Stack) -> RegContext {$/;"	f
+new	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/rt.rs	/^    pub fn new(size: usize) -> Context {$/;"	f
+new	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/stack/mod.rs	/^    pub fn new(size: usize) -> Stack {$/;"	f
+new	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/stack/mod.rs	/^    pub unsafe fn new(top: *mut c_void, bottom: *mut c_void) -> SysStack {$/;"	f
+new_opt	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/gen_impl.rs	/^    pub fn new_opt<'a, T: Any, F>(size: usize, f: F) -> Generator<'a, A, T>$/;"	f
+new_scoped	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/gen_impl.rs	/^    pub fn new_scoped<'a, T, F>(f: F) -> Generator<'a, A, T>$/;"	f
+new_scoped_opt	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/gen_impl.rs	/^    pub fn new_scoped_opt<'a, T, F>(size: usize, f: F) -> Generator<'a, A, T>$/;"	f
+next	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/gen_impl.rs	/^    fn next(&mut self) -> Option<T> {$/;"	f
+no_decreasing_digits_left_to_right	/home/lan/dev/puzzles/advent-of-code/day4/src/password_search.rs	/^pub fn no_decreasing_digits_left_to_right(i: u32) -> bool {$/;"	f
+page_size	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/stack/unix.rs	/^pub fn page_size() -> usize {$/;"	f
+page_size	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/stack/windows.rs	/^pub fn page_size() -> usize {$/;"	f
+pop_context	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/rt.rs	/^    pub fn pop_context(&self, ctx: *mut Context) -> &'static mut Context {$/;"	f
+prefetch	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/detail/x86_64_unix.rs	/^    pub fn prefetch(&self) {$/;"	f
+prefetch	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/detail/x86_64_unix.rs	/^    pub fn prefetch(data: *const usize);$/;"	f
+prefetch	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/detail/x86_64_windows.rs	/^    pub fn prefetch(&self) {$/;"	f
+prefetch	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/detail/x86_64_windows.rs	/^pub fn prefetch(data: *const usize) {$/;"	f
+prefetch	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/gen_impl.rs	/^    pub fn prefetch(&self) {$/;"	f
+prefetch	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/reg_context.rs	/^    pub fn prefetch(&self) {$/;"	f
+prefetch_asm	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/detail/x86_64_windows.rs	/^    pub fn prefetch_asm(data: *const usize);$/;"	f
+protect_stack	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/stack/unix.rs	/^pub unsafe fn protect_stack(stack: &SysStack) -> io::Result<SysStack> {$/;"	f
+protect_stack	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/stack/windows.rs	/^pub unsafe fn protect_stack(stack: &SysStack) -> io::Result<SysStack> {$/;"	f
+push_context	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/rt.rs	/^    pub fn push_context(&self, ctx: *mut Context) {$/;"	f
+raw_cancel	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/gen_impl.rs	/^    unsafe fn raw_cancel(&mut self) {$/;"	f
+raw_get_yield	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/yield_.rs	/^fn raw_get_yield<A: Any>(context: &mut Context) -> Option<A> {$/;"	f
+raw_send	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/gen_impl.rs	/^    pub fn raw_send(&mut self, para: Option<A>) -> Option<T> {$/;"	f
+raw_yield	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/scope.rs	/^    fn raw_yield(&mut self, env: &ContextStack, context: &mut Context, v: T) {$/;"	f
+raw_yield	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/yield_.rs	/^fn raw_yield<T: Any>(env: &ContextStack, context: &mut Context, v: T) {$/;"	f
+raw_yield_now	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/yield_.rs	/^pub fn raw_yield_now(env: &ContextStack, cur: &mut Context) {$/;"	f
+resume	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/gen_impl.rs	/^    pub fn resume(&mut self) -> Option<T> {$/;"	f
+resume_gen	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/gen_impl.rs	/^    fn resume_gen(&mut self) {$/;"	f
+run_test	/home/lan/dev/puzzles/advent-of-code/day4/src/password_search.rs	/^        fn run_test(n: u32, exp: &[(u32, u32)]) {$/;"	f
+run_test	/home/lan/dev/puzzles/advent-of-code/day4/src/password_search.rs	/^        fn run_test(n: u32, exp: &[u32]) {$/;"	f
+run_test	/home/lan/dev/puzzles/advent-of-code/day4/src/password_search.rs	/^        fn run_test(n: u32, exp: bool) {$/;"	f
+scoped_init	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/gen_impl.rs	/^    pub fn scoped_init<F: FnOnce(Scope<'a, A, T>) -> T + 'a>(&mut self, f: F)$/;"	f
+send	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/gen_impl.rs	/^    pub fn send(&mut self, para: A) -> T {$/;"	f
+set_local_data	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/gen_impl.rs	/^    pub fn set_local_data(&mut self, data: *mut u8) {$/;"	f
+set_para	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/gen_impl.rs	/^    pub fn set_para(&mut self, para: A) {$/;"	f
+set_ret	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/rt.rs	/^    pub fn set_ret<T>(&mut self, v: T)$/;"	f
+set_ret	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/scope.rs	/^    fn set_ret(&mut self, v: T) {$/;"	f
+size	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/stack/mod.rs	/^    pub fn size(&self) -> usize {$/;"	f
+stack_usage	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/gen_impl.rs	/^    pub fn stack_usage(&self) -> (usize, usize) {$/;"	f
+swap	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/reg_context.rs	/^    pub fn swap(out_context: &mut RegContext, in_context: &RegContext) {$/;"	f
+swap_registers	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/detail/x86_64_unix.rs	/^    pub fn swap_registers(out_regs: *mut Registers, in_regs: *const Registers);$/;"	f
+swap_registers	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/detail/x86_64_windows.rs	/^    pub fn swap_registers(out_regs: *mut Registers, in_regs: *const Registers);$/;"	f
+test	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/reg_context.rs	/^mod test {$/;"	m
+test	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/rt.rs	/^mod test {$/;"	m
+test_cluster_same_digits	/home/lan/dev/puzzles/advent-of-code/day4/src/password_search.rs	/^    fn test_cluster_same_digits() {$/;"	f
+test_compute_possible_password_combinations	/home/lan/dev/puzzles/advent-of-code/day4/src/password_search.rs	/^    fn test_compute_possible_password_combinations() {$/;"	f
+test_has_two_adjacent_digits	/home/lan/dev/puzzles/advent-of-code/day4/src/password_search.rs	/^    fn test_has_two_adjacent_digits() {$/;"	f
+test_is_context	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/rt.rs	/^    fn test_is_context() {$/;"	f
+test_no_decreasing_digits_left_to_right	/home/lan/dev/puzzles/advent-of-code/day4/src/password_search.rs	/^    fn test_no_decreasing_digits_left_to_right() {$/;"	f
+test_swap_context	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/reg_context.rs	/^    fn test_swap_context() {$/;"	f
+test_to_digits	/home/lan/dev/puzzles/advent-of-code/day4/src/password_search.rs	/^    fn test_to_digits() {$/;"	f
+tests	/home/lan/dev/puzzles/advent-of-code/day4/src/password_search.rs	/^mod tests {$/;"	m
+to_digits	/home/lan/dev/puzzles/advent-of-code/day4/src/password_search.rs	/^pub fn to_digits(n: u32) -> Vec<u32> {$/;"	f
+top	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/rt.rs	/^    pub fn top(&self) -> &'static mut Context {$/;"	f
+top	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/stack/mod.rs	/^    pub fn top(&self) -> *mut c_void {$/;"	f
+type_error	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/rt.rs	/^fn type_error<A>(msg: &str) -> ! {$/;"	f
+yield_	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/scope.rs	/^    pub fn yield_(&mut self, v: T) -> Option<A> {$/;"	f
+yield_	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/yield_.rs	/^pub fn yield_<A: Any, T: Any>(v: T) -> Option<A> {$/;"	f
+yield_from	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/scope.rs	/^    pub fn yield_from(&mut self, mut g: Box<GeneratorImpl<A, T>>) -> Option<A> {$/;"	f
+yield_from	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/yield_.rs	/^pub fn yield_from<A: Any, T: Any>(mut g: Generator<A, T>) -> Option<A> {$/;"	f
+yield_now	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/yield_.rs	/^pub fn yield_now() {$/;"	f
+yield_with	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/scope.rs	/^    pub fn yield_with(&mut self, v: T) {$/;"	f
+yield_with	/home/lan/.cargo/registry/src/github.com-1ecc6299db9ec823/generator-0.6.19/src/yield_.rs	/^pub fn yield_with<T: Any>(v: T) {$/;"	f
