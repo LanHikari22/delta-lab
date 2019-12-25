@@ -11,14 +11,6 @@ version = "0.1.10"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
-name = "day2"
-version = "0.1.0"
-dependencies = [
- "generator 0.6.19 (registry+https://github.com/rust-lang/crates.io-index)",
- "intcode 0.1.0",
-]
-
-[[package]]
 name = "generator"
 version = "0.6.19"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -33,6 +25,9 @@ dependencies = [
 [[package]]
 name = "intcode"
 version = "0.1.0"
+dependencies = [
+ "generator 0.6.19 (registry+https://github.com/rust-lang/crates.io-index)",
+]
 
 [[package]]
 name = "libc"
