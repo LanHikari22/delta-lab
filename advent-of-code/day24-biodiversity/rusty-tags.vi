@@ -1,0 +1,28 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+BugScannerGrid	/home/lan/dev/puzzles/advent-of-code/day24-biodiversity/src/bug_simulator.rs	/^pub struct BugScannerGrid {$/;"	s
+BugScannerGridReadError	/home/lan/dev/puzzles/advent-of-code/day24-biodiversity/src/bug_simulator.rs	/^pub enum BugScannerGridReadError {$/;"	g
+BugScannerGridTests	/home/lan/dev/puzzles/advent-of-code/day24-biodiversity/src/bug_simulator.rs	/^    mod BugScannerGridTests {$/;"	m
+BugScannerState	/home/lan/dev/puzzles/advent-of-code/day24-biodiversity/src/bug_simulator.rs	/^pub enum BugScannerState {$/;"	g
+Err	/home/lan/dev/puzzles/advent-of-code/day24-biodiversity/src/bug_simulator.rs	/^    type Err = BugScannerGridReadError;$/;"	T
+Output	/home/lan/dev/puzzles/advent-of-code/day24-biodiversity/src/bug_simulator.rs	/^    type Output = [BugScannerState];$/;"	T
+TEST_DATA	/home/lan/dev/puzzles/advent-of-code/day24-biodiversity/src/bug_simulator.rs	/^    static TEST_DATA: &[TestData] = &[$/;"	c
+TestData	/home/lan/dev/puzzles/advent-of-code/day24-biodiversity/src/bug_simulator.rs	/^    struct TestData {$/;"	s
+adjacent_bugs	/home/lan/dev/puzzles/advent-of-code/day24-biodiversity/src/bug_simulator.rs	/^    fn adjacent_bugs(&self, row: usize, col: usize) -> usize {$/;"	f
+calculate_biodiversity_rating	/home/lan/dev/puzzles/advent-of-code/day24-biodiversity/src/bug_simulator.rs	/^    pub fn calculate_biodiversity_rating(&self) -> u32 {$/;"	f
+description	/home/lan/dev/puzzles/advent-of-code/day24-biodiversity/src/bug_simulator.rs	/^    fn description(&self) -> &str {$/;"	f
+fmt	/home/lan/dev/puzzles/advent-of-code/day24-biodiversity/src/bug_simulator.rs	/^    fn fmt(&self, formatter: &mut fmt::Formatter) -> fmt::Result {$/;"	f
+from_str	/home/lan/dev/puzzles/advent-of-code/day24-biodiversity/src/bug_simulator.rs	/^    fn from_str(format: &str) -> Result<Self, Self::Err> {$/;"	f
+index	/home/lan/dev/puzzles/advent-of-code/day24-biodiversity/src/bug_simulator.rs	/^    fn index(&self, i: usize) -> &Self::Output {$/;"	f
+index_mut	/home/lan/dev/puzzles/advent-of-code/day24-biodiversity/src/bug_simulator.rs	/^    fn index_mut(&mut self, i: usize) -> &mut [BugScannerState] {$/;"	f
+main	/home/lan/dev/puzzles/advent-of-code/day24-biodiversity/src/main.rs	/^fn main() -> Result<(), Box<dyn Error>> {$/;"	f
+source	/home/lan/dev/puzzles/advent-of-code/day24-biodiversity/src/bug_simulator.rs	/^    fn source(&self) -> Option<&(dyn Error + 'static)> {$/;"	f
+test_calculate_biodiversity_rating	/home/lan/dev/puzzles/advent-of-code/day24-biodiversity/src/bug_simulator.rs	/^        fn test_calculate_biodiversity_rating() {$/;"	f
+test_read	/home/lan/dev/puzzles/advent-of-code/day24-biodiversity/src/bug_simulator.rs	/^        fn test_read() {$/;"	f
+test_update	/home/lan/dev/puzzles/advent-of-code/day24-biodiversity/src/bug_simulator.rs	/^        fn test_update() {$/;"	f
+tests	/home/lan/dev/puzzles/advent-of-code/day24-biodiversity/src/bug_simulator.rs	/^mod tests {$/;"	m
+update	/home/lan/dev/puzzles/advent-of-code/day24-biodiversity/src/bug_simulator.rs	/^    pub fn update(&mut self) {$/;"	f
