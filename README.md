@@ -4,7 +4,7 @@
 
 # Puzzles
 
-A repository hosting my solutions to various programming challenges
+A repository hosting my solutions to various programming challenges, and experimentations with different languages and technologies.
 
 ---
 
