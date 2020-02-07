@@ -1,0 +1,274 @@
+# do dff1911_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Copying /home/lan/bin/intelFPGA_lite/19.1/modelsim_ase/linuxaloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vcom -2008 -work work {/home/lan/dev/fpga/de10/ce1911/dff1911/testbench_utils.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:58:49 on Jan 21,2020
+# vcom -reportprogress 300 -2008 -work work /home/lan/dev/fpga/de10/ce1911/dff1911/testbench_utils.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling package testbench_utils
+# ** Warning: /home/lan/dev/fpga/de10/ce1911/dff1911/testbench_utils.vhd(19): (vcom-1236) Shared variables must be of a protected type.
+# ** Warning: /home/lan/dev/fpga/de10/ce1911/dff1911/testbench_utils.vhd(21): (vcom-1236) Shared variables must be of a protected type.
+# -- Compiling package body testbench_utils
+# -- Loading package testbench_utils
+# End time: 19:58:49 on Jan 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 2
+# vcom -2008 -work work {/home/lan/dev/fpga/de10/ce1911/dff1911/clock_div.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:58:49 on Jan 21,2020
+# vcom -reportprogress 300 -2008 -work work /home/lan/dev/fpga/de10/ce1911/dff1911/clock_div.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity clock_div
+# -- Compiling architecture behavioral of clock_div
+# -- Loading package testbench_utils
+# -- Compiling entity clock_div_tb
+# -- Compiling architecture tb of clock_div_tb
+# -- Loading entity clock_div
+# End time: 19:58:49 on Jan 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# 
+# stdin: <EOF>
+    proc vsim_test {module} {
+        set PROJ_PATH /home/lan/dev/fpga/de10/ce1911/dff1911
+
+        # recompile
+        vcom -reportprogress 300 -work work ${PROJ_PATH}/${module}.vhd
+
+        # start simulation
+        vsim -i -voptargs=3D"+acc" -l msim_transcript work.${module}_tb
+
+        # add all signals to be logged so that internal signals can be viewed
+        add log -r /*
+
+        # add all signals to region in wave
+        add wave sim:/${module}_tb/*
+
+        # restart simulation and simulation for 1 us
+        restart -f; run 1 us
+    }
+
+vsim_test clock_div
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:58:58 on Jan 21,2020
+# vcom -reportprogress 300 -work work /home/lan/dev/fpga/de10/ce1911/dff1911/clock_div.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity clock_div
+# -- Compiling architecture behavioral of clock_div
+# -- Loading package testbench_utils
+# -- Compiling entity clock_div_tb
+# -- Compiling architecture tb of clock_div_tb
+# -- Loading entity clock_div
+# End time: 19:58:58 on Jan 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -i -voptargs="3D"+acc"" -l msim_transcript work.clock_div_tb 
+# Start time: 19:58:58 on Jan 21,2020
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.testbench_utils(body)
+# Loading work.clock_div_tb(tb)
+# Loading work.clock_div(behavioral)
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+vsim_test clock_div
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:59:43 on Jan 21,2020
+# vcom -reportprogress 300 -work work /home/lan/dev/fpga/de10/ce1911/dff1911/clock_div.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity clock_div
+# -- Compiling architecture behavioral of clock_div
+# -- Loading package testbench_utils
+# -- Compiling entity clock_div_tb
+# -- Compiling architecture tb of clock_div_tb
+# -- Loading entity clock_div
+# End time: 19:59:43 on Jan 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 19:59:44 on Jan 21,2020, Elapsed time: 0:00:46
+# Errors: 0, Warnings: 1
+# vsim -i -voptargs="3D"+acc"" -l msim_transcript work.clock_div_tb 
+# Start time: 19:59:44 on Jan 21,2020
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.testbench_utils(body)
+# Loading work.clock_div_tb(tb)
+# Loading work.clock_div(behavioral)
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+vsim_test clock_div
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:02:17 on Jan 21,2020
+# vcom -reportprogress 300 -work work /home/lan/dev/fpga/de10/ce1911/dff1911/clock_div.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity clock_div
+# -- Compiling architecture behavioral of clock_div
+# -- Loading package testbench_utils
+# -- Compiling entity clock_div_tb
+# -- Compiling architecture tb of clock_div_tb
+# -- Loading entity clock_div
+# End time: 20:02:17 on Jan 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 20:02:18 on Jan 21,2020, Elapsed time: 0:02:34
+# Errors: 0, Warnings: 1
+# vsim -i -voptargs="3D"+acc"" -l msim_transcript work.clock_div_tb 
+# Start time: 20:02:18 on Jan 21,2020
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.testbench_utils(body)
+# Loading work.clock_div_tb(tb)
+# Loading work.clock_div(behavioral)
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+vsim_test clock_div
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:06:30 on Jan 21,2020
+# vcom -reportprogress 300 -work work /home/lan/dev/fpga/de10/ce1911/dff1911/clock_div.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity clock_div
+# -- Compiling architecture behavioral of clock_div
+# ** Error: /home/lan/dev/fpga/de10/ce1911/dff1911/clock_div.vhd(19): near "clk_out": syntax error
+# ** Error: /home/lan/dev/fpga/de10/ce1911/dff1911/clock_div.vhd(36): VHDL Compiler exiting
+# End time: 20:06:30 on Jan 21,2020, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 0
+# /home/lan/bin/intelFPGA_lite/19.1/modelsim_ase/linuxaloem/vcom failed.
+
+vsim_test clock_div
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:08:50 on Jan 21,2020
+# vcom -reportprogress 300 -work work /home/lan/dev/fpga/de10/ce1911/dff1911/clock_div.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity clock_div
+# -- Compiling architecture behavioral of clock_div
+# -- Loading package testbench_utils
+# -- Compiling entity clock_div_tb
+# -- Compiling architecture tb of clock_div_tb
+# -- Loading entity clock_div
+# End time: 20:08:50 on Jan 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 20:08:51 on Jan 21,2020, Elapsed time: 0:06:33
+# Errors: 3, Warnings: 1
+# vsim -i -voptargs="3D"+acc"" -l msim_transcript work.clock_div_tb 
+# Start time: 20:08:51 on Jan 21,2020
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.testbench_utils(body)
+# Loading work.clock_div_tb(tb)
+# Loading work.clock_div(behavioral)
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+vsim_test clock_div
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:28:07 on Jan 21,2020
+# vcom -reportprogress 300 -work work /home/lan/dev/fpga/de10/ce1911/dff1911/clock_div.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity clock_div
+# -- Compiling architecture behavioral of clock_div
+# -- Loading package testbench_utils
+# -- Compiling entity clock_div_tb
+# -- Compiling architecture tb of clock_div_tb
+# -- Loading entity clock_div
+# End time: 20:28:07 on Jan 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 20:28:07 on Jan 21,2020, Elapsed time: 0:19:16
+# Errors: 0, Warnings: 1
+# vsim -i -voptargs="3D"+acc"" -l msim_transcript work.clock_div_tb 
+# Start time: 20:28:07 on Jan 21,2020
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.testbench_utils(body)
+# Loading work.clock_div_tb(tb)
+# Loading work.clock_div(behavioral)
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+vsim_test clock_div
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:13:24 on Jan 21,2020
+# vcom -reportprogress 300 -work work /home/lan/dev/fpga/de10/ce1911/dff1911/clock_div.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity clock_div
+# -- Compiling architecture behavioral of clock_div
+# -- Loading package testbench_utils
+# -- Compiling entity clock_div_tb
+# -- Compiling architecture tb of clock_div_tb
+# -- Loading entity clock_div
+# End time: 21:13:24 on Jan 21,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 21:13:24 on Jan 21,2020, Elapsed time: 0:45:17
+# Errors: 0, Warnings: 1
+# vsim -i -voptargs="3D"+acc"" -l msim_transcript work.clock_div_tb 
+# Start time: 21:13:24 on Jan 21,2020
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.testbench_utils(body)
+# Loading work.clock_div_tb(tb)
+# Loading work.clock_div(behavioral)
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+vsim_test clock_div
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:15:15 on Jan 21,2020
+# vcom -reportprogress 300 -work work /home/lan/dev/fpga/de10/ce1911/dff1911/clock_div.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity clock_div
+# -- Compiling architecture behavioral of clock_div
+# -- Loading package testbench_utils
+# -- Compiling entity clock_div_tb
+# -- Compiling architecture tb of clock_div_tb
+# -- Loading entity clock_div
+# End time: 21:15:16 on Jan 21,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# End time: 21:15:16 on Jan 21,2020, Elapsed time: 0:01:52
+# Errors: 0, Warnings: 1
+# vsim -i -voptargs="3D"+acc"" -l msim_transcript work.clock_div_tb 
+# Start time: 21:15:16 on Jan 21,2020
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.testbench_utils(body)
+# Loading work.clock_div_tb(tb)
+# Loading work.clock_div(behavioral)
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
