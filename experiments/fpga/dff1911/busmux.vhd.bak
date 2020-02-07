@@ -1,0 +1,19 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+type bus_arr is array (natural <>) of std_logic_vector(natural <>);
+
+entity busmux is 
+generic (DATAW: integer := 8; ADDRW: integer := 4);
+port (
+	sel: in unsigned(ADDRW-1 downto 0);
+	x: in bus_arr (0 to 2**ADDRW-1)(0 to DATAW-1);
+	y: out std_logic_vector(DATAW-1 downto 0);
+);
+end entity;
+
+architecture dataflow of busmux is
+begin
+	y <= x(to_integer(sel));
+end architecture;

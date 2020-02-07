@@ -1,0 +1,25 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity dlatch1911 is
+port(
+	D: 	in std_logic;
+	EN: 	in std_logic;
+	Q: 	out std_logic;
+	QBAR: out std_logic
+);
+end entity;
+
+architecture dataflow of dlatch1911 is
+	component sr_latch is
+	port(
+		S: in std_logic;
+		R: in std_logic;
+		Q: out std_logic;
+		QBAR: out std_logic
+	);
+	end component;
+begin
+	Q <= '0';
+	QBAR <= '0';
+end architecture;

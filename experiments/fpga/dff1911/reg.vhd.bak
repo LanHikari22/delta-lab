@@ -1,0 +1,13 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity reg4 is
+port(
+
+);
+end entity;
+
+architecture dataflow of reg4 is
+begin
+end architecture;
+

@@ -1,0 +1,30 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity clock_div is
+generic (FCLK_IN: integer := 50E6; FCLK_OUT: integer := 50 );
+port (
+	clk_in: in std_logic;
+	clk_out: inout std_logic;
+);
+end entity;
+
+
+architecture behavioral of clock_div is
+	constant PERIOD_CNT: integer := FCLK_IN / FCLK_OUT;
+begin
+	gen_clk: process (clk_in) is
+		variable counter: integer := 0;
+		clk_out <= '0';
+	begin
+		if rising_edge(clk_in) then
+			if counter = PERIOD_CNT then
+				clk_out <= not clk_out;
+				counter := 0;
+			else
+				counter := counter + 1;
+			end if;
+		end if;
+	end process;
+end architecture;
