@@ -1,10 +1,10 @@
 
-<a href="https://github.com/LanHikari22/puzzles"><img src="https://i.ibb.co/fQcWH0v/38742837-removebg-preview.png" title="Anime Coding Puzzles" alt="404 cute anime programming image not found!"></a>
+<a href="https://github.com/LanHikari22/Delta-Lab"><img src="http://sf.co.ua/2012/wallpaper-2070621.jpg" title="Anime Coding Puzzles" alt="404 cute anime programming image not found!"></a>
 
 
-# Puzzles
+# Delta Lab
 
-A repository hosting my solutions to various programming challenges
+A repository hosting my solutions to various programming challenges, and experimentations with different languages and technologies.
 
 ---
 
