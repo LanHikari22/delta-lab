@@ -7,6 +7,7 @@ target/
 # vim backup
 *.swo
 *.swp
+*.swn
 
 # C output
 *.out
