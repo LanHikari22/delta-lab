@@ -4,17 +4,28 @@ dep = $(obj:.o=.d)
 libs = $(patsubst lib%, -l%, $(shell basename $(basename $(wildcard libs/*.a)))) \
 	-lcunit
 exec = $(shell basename $(CURDIR))
+version = 0.1.0
 repo_base = ../../..
 
-CFLAGS =
+CFLAGS = -Wall
 LDFLAGS = -Llibs $(libs)
+
+# for testing, enable conditional compilation macro to compile CUnit tests
+ifeq ($(MAKECMDGOALS), test)
+	CFLAGS += -D CUNIT_TESTS
+endif
 
 all: $(exec)
 
 build: $(exec)
 
 # rule for creating a library in case this is a library project
+# an assumption is made that intead of main, a library requires a "lib.c"
+# this is used so that this rule isn't accidentally ran on projects that aren't meant to be library projects
 lib: $(obj)
+ifeq (,$(wildcard lib.c))
+	$(error "making a static library in a project that doesn't contain a lib.c!")
+endif
 	$(AR) rcs lib$(exec).a $^
 
 $(exec): $(obj)
@@ -42,12 +53,11 @@ clean:
 .PHONE: install
 install:
 	mkdir -p libs/
-	cp $(repo_base)/c/argparse/libargparse.a libs/
 
 .PHONY: run
-run: $(exec)
+run: clean $(exec)
 	./$(exec) $(args)
 
 .PHONY: test
-test: $(exec)
-	./$(exec) --test $(args)
+test: clean $(exec)
+	./$(exec) $(args)
