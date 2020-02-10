@@ -3,11 +3,15 @@ export
 #always set COMDIR (common sources, makefiles, libraries) first
 COMDIR := ../com
 
+# those are kinda hacked into other variables since make includes restricted control
+CFLAGS += -Iinc
+LDFLAGS +=
+
 #set optimize/debug symbols options
-OPTIMIZE := -O3 -ggdb
+OPTIMIZE := -O3 -ggdb $(CFLAGS)
 
 #set std libs to be linked
-STDLIBS := -lm
+STDLIBS := -lm $(LDFLAGS)
 
 #include common project header
 include $(COMDIR)/pj/pjhdr.mk
@@ -51,4 +55,6 @@ include $(COMDIR)/pj/pj.mk
 
 .PHONY=program
 program:
+	# @echo CFLAGS: $(CFLAGS)
+	# @echo LDFLAGS: $(LDFLAGS)
 	${STM32_PROGRAMMER_HOME}/STM32_Programmer_CLI --connect port=SWD --download nucleo-f410-bsp1.out --start

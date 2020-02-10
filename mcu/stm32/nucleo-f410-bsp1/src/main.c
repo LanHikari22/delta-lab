@@ -5,6 +5,7 @@
 #include "mxconstants.h"
 #include "gpio.h"
 #include "usart2.h"
+#include "board_leds.h"
 
 #define SET_LED_RED
 #define RESET_LED_RED
@@ -81,22 +82,47 @@ static THD_FUNCTION(Thread_blink, arg) {
 	}
 }
 
+void led_error(int error, const char *msg) {
+    board_leds_init(0x3FF);
+    if (msg) {
+        printf(msg);
+    }
+    while (1) {
+        board_leds_clear(0x3FF);
+        board_leds_set(error);
+        chThdSleepMilliseconds(1000);
+        board_leds_clear(0x3FF);
 
-int main1(void)
-{
+        for (int i=0; i<10; i++) {
+            board_leds_set(0x3E0);
+            board_leds_clear(0x1F);
+            chThdSleepMilliseconds(50);
+            board_leds_set(0x1F);
+            board_leds_clear(0x3E0);
+            chThdSleepMilliseconds(50);
+        }
+    }
+}
 
-	  chSysInit();
-	  init_USART2();
-	  printf("Hello World 2\n");
-	  SendDataUSART2("Hello world 1\n", 14);
+int main1(void) {
+	chSysInit();
+	init_USART2();
+	printf("Hello World 2\n");
+	SendDataUSART2("Hello world 1\n", 14);
 
+	chThdCreateStatic(waThread_blink, sizeof(waThread_blink), NORMALPRIO, Thread_blink, NULL);
+	chThdCreateStatic(waThread_uart, sizeof(waThread_uart), NORMALPRIO, Thread_uart, NULL);
+	chThdSetPriority(LOWPRIO);
 
-	  chThdCreateStatic(waThread_blink, sizeof(waThread_blink), NORMALPRIO, Thread_blink, NULL);
-	  chThdCreateStatic(waThread_uart, sizeof(waThread_uart), NORMALPRIO, Thread_uart, NULL);
-	  chThdSetPriority(LOWPRIO);
+    BoardLEDs_Error led_status;
+    led_status = board_leds_init(0x3FF);
+    if (led_status != BOARD_LEDS_OK) led_error(led_status, "oops! leds init failed!\n");
+    chThdSleepMilliseconds(10);
 
-	  while (1)
-	  {
-		    chThdSleepMilliseconds(10);
-	  }
+    led_status = board_leds_set(0xFFFF);
+    if (led_status != BOARD_LEDS_OK) led_error(led_status, "I just have veru high standards!\n");
+
+	while (1) {
+        chThdSleepMilliseconds(10);
+	}
 }
