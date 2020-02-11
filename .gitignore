@@ -9,8 +9,16 @@ target/
 *.swp
 *.swn
 
-# C output
+# gcc compilation output files
 *.out
+*.bin
+*.map
+*.o
+*.d
+
+# stm32 compilation
+*.list
+o/
 
 # quartus
 simulation/

@@ -119,7 +119,9 @@ int main1(void) {
     if (led_status != BOARD_LEDS_OK) led_error(led_status, "oops! leds init failed!\n");
     chThdSleepMilliseconds(10);
 
-    led_status = board_leds_set(0xFFFF);
+    led_error(5, "BOO!\n");
+
+    led_status = board_leds_set(0x0);
     if (led_status != BOARD_LEDS_OK) led_error(led_status, "I just have veru high standards!\n");
 
 	while (1) {
