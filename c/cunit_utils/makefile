@@ -5,7 +5,7 @@ libs = $(patsubst lib%, -l%, $(notdir $(basename $(wildcard libs/*.a) $(wildcard
 	-lcunit
 exec = $(notdir $(CURDIR))
 version = 0.1.0
-repo_base = ../../..
+repo_base = $(shell git rev-parse --show-toplevel)
 
 CFLAGS_INCLUDE_LIB_HEADERS = -Iinc $(patsubst %, -I%, $(dir $(wildcard libs/*/)))
 LDFLAGS_INCLUDE_LIB_DIRS = -Llibs $(patsubst %, -L%, $(dir $(wildcard libs/*/)))
@@ -57,6 +57,7 @@ clean:
 .PHONE: install
 install:
 	mkdir -p libs/
+	$(MAKE) -C $(repo_base)/c/cunit_utils/ lib
 	cp -r $(repo_base)/c/cunit_utils/libcunit_utils-0.1.0 libs/
 
 .PHONY: run
