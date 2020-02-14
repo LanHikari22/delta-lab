@@ -6,11 +6,13 @@
 typedef struct {
     struct ll_LinkedListNode *head;
     struct ll_LinkedListNode *tail;
+    u32 data_size;
 }ll_LinkedList;
 
 struct ll_LinkedListNode {
-    void *data;
     struct ll_LinkedListNode *next;
+    struct ll_LinkedListNode *prev;
+    u8 data[];
 };
 
 
@@ -19,7 +21,7 @@ typedef struct {
     struct ll_BufferLinkedListNode *head;
     struct ll_BufferLinkedListNode *tail;
     void *buffer;
-    const unsigned int data_size;
+    const u32 data_size;
 }ll_BufferLinkedList;
 
 struct ll_BufferLinkedListNode {
@@ -29,27 +31,32 @@ struct ll_BufferLinkedListNode {
 
 typedef enum {
     LL_OK,
-    LL_INALID_LINKED_LIST_POINTER,
-    LL_INALID_ELEMENT,
-    LL_INDEX_OUT_OF_BOUNDS,
-    LL_INIT_FAILURE,
-    LL_INTERNAL_ERROR,
-}LL_ERROR;
+    LL_ERROR_NULL_LINKED_LIST_POINTER,
+    LL_ERROR_NULL_ELEMENT_POINTER,
+    LL_ERROR_EMPTY_LINKED_LIST,
+    LL_ERROR_INDEX_OUT_OF_BOUNDS,
+    LL_ERROR_INIT_FAILURE,
+    LL_ERROR_INTERNAL,
+}ll_Error;
 
-ll_LinkedList* ll_new();
-LL_ERROR ll_free(ll_LinkedList *self);
-LL_ERROR ll_push(ll_LinkedList *self, void *elem);
-LL_ERROR ll_pop(ll_LinkedList *self);
-LL_ERROR ll_insert(ll_LinkedList *self, int index, void *elem);
-LL_ERROR ll_get(const ll_LinkedList *self, int index, void **out);
-LL_ERROR ll_remove(ll_LinkedList *self, int index);
+ll_LinkedList* ll_new(u32 data_size);
+ll_Error ll_free(ll_LinkedList **self);
+ll_Error ll_push(ll_LinkedList *self, void *elem);
+ll_Error ll_push_front(ll_LinkedList *self, void *elem);
+ll_Error ll_pop(ll_LinkedList *self, void *out_elem);
+ll_Error ll_pop_front(ll_LinkedList *self, void *out_elem);
+ll_Error ll_insert(ll_LinkedList *self, int index, void *elem);
+ll_Error ll_get(const ll_LinkedList *self, int index, void *out_elem);
+ll_Error ll_remove(ll_LinkedList *self, int index);
 
 
-LL_ERROR ll_buf_init(ll_BufferLinkedList *self, void *buffer, int data_size);
-LL_ERROR ll_buf_push(ll_BufferLinkedList *self, void *elem);
-LL_ERROR ll_buf_pop(ll_BufferLinkedList *self);
-LL_ERROR ll_buf_insert(ll_BufferLinkedList *self, int index, void *elem);
-LL_ERROR ll_buf_get(const ll_BufferLinkedList *self, int index, void **out);
-LL_ERROR ll_buf_remove(ll_BufferLinkedList *self, int index);
+ll_Error ll_buf_init(ll_BufferLinkedList *self, void *buffer, int data_size);
+ll_Error ll_buf_push(ll_BufferLinkedList *self, void *elem);
+ll_Error ll_buf_push_front(ll_BufferLinkedList *self, void *elem);
+ll_Error ll_buf_pop(ll_BufferLinkedList *self);
+ll_Error ll_buf_pop_front(ll_BufferLinkedList *self);
+ll_Error ll_buf_insert(ll_BufferLinkedList *self, int index, void *elem);
+ll_Error ll_buf_get(const ll_BufferLinkedList *self, int index, void **out);
+ll_Error ll_buf_remove(ll_BufferLinkedList *self, int index);
 
 #endif // LIB_H

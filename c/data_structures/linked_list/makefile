@@ -9,7 +9,7 @@ repo_base = $(shell git rev-parse --show-toplevel)
 
 CFLAGS_INCLUDE_LIB_HEADERS = -Iinc $(patsubst %, -I%, $(dir $(wildcard libs/*/)))
 LDFLAGS_INCLUDE_LIB_DIRS = -Llibs $(patsubst %, -L%, $(dir $(wildcard libs/*/)))
-CFLAGS = -Wall $(CFLAGS_INCLUDE_LIB_HEADERS)
+CFLAGS = -Wall -ggdb $(CFLAGS_INCLUDE_LIB_HEADERS)
 LDFLAGS = $(LDFLAGS_INCLUDE_LIB_DIRS) $(libs)
 
 # for testing, enable conditional compilation macro to compile CUnit tests
