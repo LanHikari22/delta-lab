@@ -74,22 +74,6 @@
     res;\
 })
 
-/// similar to EXPECT, but if an error occurs it "error returns a specified error.
-#define EXPECT_OR_REDIRCT(T, err, func, ...) ({\
-    T res;\
-    int status = (int)func(&res, ##__VA_ARGS__);\
-    if (status != 0) {ERROR_RETURN(err);}\
-    res;\
-})
-
-/// similar to EXPECT_S, but if an error occurs it "error returns" a specified error.
-#define EXPECT_S_OR_REDIRECT(T, err, func, self, ...) ({\
-    T res;\
-    int status = (int)func(self, &res, ##__VA_ARGS__);\
-    if (status != 0) {ERROR_RETURN(err);}\
-    res;\
-})
-
 /// similar to EXPECT, but evaluates to a default expression in case of failure
 #define EXPECT_OR_ELSE(T, err_default, func, ...) ({\
     T res;\

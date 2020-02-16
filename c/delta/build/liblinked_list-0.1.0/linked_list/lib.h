@@ -51,7 +51,7 @@ ll_Error ll_push_front(ll_LinkedList *self, void *elem);
 ll_Error ll_pop(ll_LinkedList *self, void *out_elem);
 ll_Error ll_pop_front(ll_LinkedList *self, void *out_elem);
 ll_Error ll_insert(ll_LinkedList *self, int index, void *elem);
-ll_Error ll_get(const ll_LinkedList *self, void *out_elem, int index);
+ll_Error ll_get(const ll_LinkedList *self, int index, void *out_elem);
 ll_Error ll_remove(ll_LinkedList *self, int index);
 
 

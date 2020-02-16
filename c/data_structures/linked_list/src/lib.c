@@ -204,7 +204,7 @@ ll_Error ll_pop_front(ll_LinkedList *self, void *out_elem) {
 ///      - LL_ERROR_INDEX_OUT_OF_BOUNDS
 ///      - LL_ERROR_INTERNAL
 /// else returns LL_OK
-static ll_Error iterate_to(const ll_LinkedList *self, int index, struct ll_LinkedListNode **out_node) {
+static ll_Error iterate_to(const ll_LinkedList *self, struct ll_LinkedListNode **out_node, int index) {
     if (self == NULL) return LL_ERROR_NULL_LINKED_LIST_POINTER;
     if (out_node == NULL) return LL_ERROR_NULL_NODE_POINTER;
     if (ll_is_empty(self)) return LL_ERROR_EMPTY_LINKED_LIST;
@@ -259,7 +259,7 @@ ll_Error ll_insert(ll_LinkedList *self, int index, void *elem) {
     else {
         // traverse to node to insert at
         struct ll_LinkedListNode *target_node = NULL; 
-        status = iterate_to(self, index, &target_node);
+        status = iterate_to(self, &target_node, index);
         if (status != LL_OK) ERROR_RETURN(LL_ERROR_INTERNAL);
         if (target_node == NULL) ERROR_RETURN(LL_ERROR_INTERNAL);
 
@@ -289,15 +289,14 @@ ll_Error ll_insert(ll_LinkedList *self, int index, void *elem) {
 ///      - LL_ERROR_INDEX_OUT_OF_BOUNDS
 ///      - LL_ERROR_INTERNAL
 /// else returns LL_OK
-ll_Error ll_get(const ll_LinkedList *self, int index, void *out_elem) {
+ll_Error ll_get(const ll_LinkedList *self, void *out_elem, int index) {
     if (self == NULL) return LL_ERROR_NULL_LINKED_LIST_POINTER;
     if (out_elem == NULL) return LL_ERROR_NULL_ELEMENT_POINTER;
+    if (self->len < 0) ERROR_RETURN(LL_ERROR_INTERNAL);
+    if (index < 0 || index > self->len) return LL_ERROR_INDEX_OUT_OF_BOUNDS;
 
-    // iterate to target node to retrieve
-    struct ll_LinkedListNode *target = NULL;
-    ll_Error status = iterate_to(self, index, &target);
-    if (status == LL_ERROR_INDEX_OUT_OF_BOUNDS) return status;
-    if (status != LL_OK) ERROR_RETURN(status);
+    // iterate to target node to retrieve (or error return)
+    struct ll_LinkedListNode *target = EXPECT_S(struct ll_LinkedListNode*, iterate_to, self, index);
 
     // retrieve target node data
     if (target == NULL) ERROR_RETURN(LL_ERROR_INTERNAL);
@@ -330,7 +329,7 @@ ll_Error ll_remove(ll_LinkedList *self, int index) {
     }
     else {
         struct ll_LinkedListNode *target = NULL;
-        status = iterate_to(self, index, &target);
+        status = iterate_to(self, &target, index);
         if (status != LL_OK) ERROR_RETURN(status);
         if (target == NULL) ERROR_RETURN(LL_ERROR_INTERNAL);
 
@@ -442,7 +441,7 @@ bool assert_pop_front_empty_u32(ll_LinkedList *ll) {
 
 bool assert_iterate_to_u32(ll_LinkedList *ll, int index, u32 exp) {
     struct ll_LinkedListNode *target;
-    ll_Error status = iterate_to(ll, index, &target);
+    ll_Error status = iterate_to(ll, &target, index);
     CU_ASSERT(status == LL_OK);
     CU_ASSERT_PTR_NOT_NULL(target);
     CU_ASSERT_EQ_U32(*(u32*)target->data, exp);
@@ -452,7 +451,7 @@ bool assert_iterate_to_u32(ll_LinkedList *ll, int index, u32 exp) {
 
 bool assert_iterate_to_error(ll_LinkedList *ll, int index, ll_Error exp) {
     struct ll_LinkedListNode *target;
-    ll_Error status = iterate_to(ll, index, &target);
+    ll_Error status = iterate_to(ll, &target, index);
     CU_ASSERT(status == exp);
     if (CU_get_error() != CUE_SUCCESS) return false;
     return true;
