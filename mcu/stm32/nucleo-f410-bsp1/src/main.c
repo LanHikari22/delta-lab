@@ -107,6 +107,7 @@ void led_error(int error, const char *msg) {
 int main1(void) {
 	chSysInit();
 	init_USART2();
+    board_leds_set(0x9);
 	printf("Hello World 2\n");
 	SendDataUSART2("Hello world 1\n", 14);
 
@@ -119,7 +120,8 @@ int main1(void) {
     if (led_status != BOARD_LEDS_OK) led_error(led_status, "oops! leds init failed!\n");
     chThdSleepMilliseconds(10);
 
-    led_error(5, "BOO!\n");
+    /* led_error(5, "BOO!\n"); */
+    board_leds_set(0x9);
 
     led_status = board_leds_set(0x0);
     if (led_status != BOARD_LEDS_OK) led_error(led_status, "I just have veru high standards!\n");

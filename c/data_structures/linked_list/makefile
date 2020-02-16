@@ -28,14 +28,16 @@ lib: $(obj)
 ifeq (,$(wildcard src/lib.c))
 	$(error "making a static library in a project that doesn't contain a lib.c!")
 endif
-	rm -rf lib$(exec)-$(version)
-	mkdir -p lib$(exec)-$(version)
-	mkdir -p lib$(exec)-$(version)/$(exec)
-	$(AR) rcs lib$(exec)-$(version)/lib$(exec)-$(version).a $^
-	cp inc/* lib$(exec)-$(version)/$(exec)
+	mkdir -p build/
+	rm -rf build/lib$(exec)-$(version)/
+	mkdir -p build/lib$(exec)-$(version)/
+	mkdir -p build/lib$(exec)-$(version)/$(exec)/
+	$(AR) rcs build/lib$(exec)-$(version)/lib$(exec)-$(version).a $^
+	cp inc/* build/lib$(exec)-$(version)/$(exec)/
 
 $(exec): $(obj)
-	$(CC) $(CFLAGS) -o $@-$(version) $^ $(LDFLAGS)
+	@mkdir -p build/
+	$(CC) $(CFLAGS) -o build/$@-$(version) $^ $(LDFLAGS)
 
 -include $(dep)   # include all dep files in the makefile
 
@@ -50,20 +52,29 @@ obj/%.d: src/%.c
 
 .PHONY: clean
 clean:
-	rm -f $(obj) $(exec)
+	rm -f $(obj) build/$(exec)
 	rm -f $(dep)
+
+.PHONY: run
+run: clean $(exec)
+	build/$(exec)-$(version) $(args)
+
+.PHONY: test
+test: clean $(exec)
+	build/$(exec)-$(version) $(args)
+
+# this macro builds a library module and installs it in libs/
+# it also takes care of removing old versions of the library from libs/
+# (lib_path, lib_version)
+define install_lib
+	$(MAKE) -C $(1)/ lib
+	rm -rf libs/lib$(notdir $(1))-*
+	cp -r $(1)/build/lib$(notdir $(1))-$(2) libs/
+endef
 
 # rule for installing prerequesites like static libraries before execution
 .PHONE: install
 install:
-	mkdir -p libs/
-	$(MAKE) -C $(repo_base)/c/cunit_utils/ lib
-	cp -r $(repo_base)/c/cunit_utils/libcunit_utils-0.1.0 libs/
+	@mkdir -p libs
+	$(call install_lib,$(repo_base)/c/cunit_utils,0.1.0)
 
-.PHONY: run
-run: clean $(exec)
-	./$(exec)-$(version) $(args)
-
-.PHONY: test
-test: clean $(exec)
-	./$(exec)-$(version) $(args)

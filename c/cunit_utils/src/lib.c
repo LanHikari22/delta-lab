@@ -8,28 +8,28 @@
 int init_suite(void);
 int clean_suite(void);
 
+/// in case of failure, CUnit registery must be cleaned to avoid leaks
+#define CLEANUP_RETURN() do {\
+    CU_cleanup_registry();\
+    return CU_get_error();\
+} while(0)
+
 /// attempts to add suite to registry. reports failure otherwise and clears registry to prevent memory leaks in CUnit lib
 /// returns CU_get_error() in case of failure, else CUE_SUCCESS.
-CU_ErrorCode CU_utils_try_add_suite(CU_pSuite *out, const char *suite_name) {
+CU_ErrorCode CUU_utils_try_add_suite(CU_pSuite *out, const char *suite_name) {
 	*out = CU_add_suite(suite_name, init_suite, clean_suite);
-	if (*out == NULL) {
-		CU_cleanup_registry();
-		return CU_get_error();
-	}
+	if (*out == NULL) CLEANUP_RETURN();
 	return CUE_SUCCESS;
 }
 
 /// attempts to add a test to a suite. reports failure otherwise and clears registry to prevent memory leaks in CUnit lib
 /// returns CU_get_error() in case of failure, else CUE_SUCCESS.
-CU_ErrorCode CU_utils_try_add_test(CU_pSuite suite, void (*test_callback)(void), const char *msg) {
-	if (CU_add_test(suite, msg, test_callback) == NULL) {
-		CU_cleanup_registry();
-		return CU_get_error();
-	}
+CU_ErrorCode CUU_utils_try_add_test(CU_pSuite suite, void (*test_callback)(void), const char *msg) {
+	if (CU_add_test(suite, msg, test_callback) == NULL) CLEANUP_RETURN();
 	return CUE_SUCCESS;
 }
 
-bool CU_impl_assert_eq_u32(uint32_t actual, uint32_t expected, const char *actual_expr, const char *expected_expr, int line, const char *file) {
+bool CUU_impl_assert_eq_u32(uint32_t actual, uint32_t expected, const char *actual_expr, const char *expected_expr, int line, const char *file) {
     if (actual != expected) {
         char *buf = NULL;
         char msg[100];
