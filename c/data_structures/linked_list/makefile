@@ -76,5 +76,5 @@ endef
 .PHONE: install
 install:
 	@mkdir -p libs
-	$(call install_lib,$(repo_base)/c/cunit_utils,0.1.0)
+	$(call install_lib,$(repo_base)/c/cunit_utils,0.2.0)
 
