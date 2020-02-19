@@ -1,6 +1,10 @@
 src = $(wildcard src/*.c)
-obj = $(patsubst src/%, obj/%, $(src:.c=.o))
+obj = $(patsubst src/%, build/obj/%, $(src:.c=.o))
+release_obj = $(patsubst src/%, build/release/obj/%, $(src:.c=.o))
+test_obj = $(patsubst src/%, build/test/obj/%, $(src:.c=.o))
 dep = $(obj:.o=.d)
+release_dep = $(release_obj:.o=.d)
+test_dep = $(test_obj:.o=.d)
 libs = $(patsubst lib%, -l%, $(notdir $(basename $(wildcard libs/*.a) $(wildcard libs/*/*.a)))) \
 	-lcunit
 exec = $(notdir $(CURDIR))
@@ -17,14 +21,56 @@ ifeq ($(MAKECMDGOALS), test)
 	CFLAGS += -D CUNIT_TESTS
 endif
 
-all: $(exec)
+# disable or enable DEBUG based on release target
+ifneq ($(MAKECMDGOALS), release)
+	CFLAGS += -D DEBUG
+endif
 
-build: $(exec)
+
+all: build
+
+.PHONY: build
+build: clean_build $(obj)
+	@mkdir -p build/
+	$(CC) $(CFLAGS) -o build/${exec}-$(version) $(obj) $(LDFLAGS)
+
+.PHONY: release
+release: clean_release $(release_obj)
+	@mkdir -p build/release/
+	$(CC) $(CFLAGS) -o build/release/$(exec)-$(version) $(release_obj) $(LDFLAGS)
+
+.PHONY: test
+test: clean_test $(test_obj)
+	@mkdir -p build/test/
+	$(CC) $(CFLAGS) -o build/test/$(exec)-$(version) $(test_obj) $(LDFLAGS)
+	build/test/$(exec)-$(version) $(args)
+
+.PHONY: clean_test
+clean_test:
+	rm -f $(test_obj)
+	rm -f $(test_dep)
+
+.PHONY: clean_release
+clean_release:
+	rm -f $(release_obj)
+	rm -f $(release_dep)
+
+.PHONY: clean_build
+clean_build:
+	rm -f $(obj)
+	rm -f $(dep)
+
+.PHONY: clean
+clean: clean_build clean_release clean_test
+
+.PHONY: run
+run: build
+	build/$(exec)-$(version) $(args)
 
 # rule for creating a library in case this is a library project
 # an assumption is made that intead of main, a library requires a "lib.c"
 # this is used so that this rule isn't accidentally ran on projects that aren't meant to be library projects
-lib: $(obj)
+lib: $(release_obj)
 ifeq (,$(wildcard src/lib.c))
 	$(error "making a static library in a project that doesn't contain a lib.c!")
 endif
@@ -35,33 +81,41 @@ endif
 	$(AR) rcs build/lib$(exec)-$(version)/lib$(exec)-$(version).a $^
 	cp inc/* build/lib$(exec)-$(version)/$(exec)/
 
-$(exec): $(obj)
-	@mkdir -p build/
-	$(CC) $(CFLAGS) -o build/$@-$(version) $^ $(LDFLAGS)
+# include dep files in the makefile
+ifneq (,$(wildcard build/obj/*))
+-include $(dep)
+endif
+ifneq (,$(wildcard build/release/obj/*))
+-include $(release_dep)
+endif
+ifneq (,$(wildcard build/test/obj/*))
+-include $(test_dep)
+endif
 
--include $(dep)   # include all dep files in the makefile
-
-obj/%.o: src/%.c
-	@mkdir -p obj/
+build/obj/%.o: src/%.c
+	@mkdir -p build/obj/
 	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
+
+build/release/obj/%.o: src/%.c
+	@mkdir -p build/release/obj/
+	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
+
+build/test/obj/%.o: src/%.c
+	@mkdir -p build/test/obj/
+	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
+
 
 # rule to generate a dep file by using the C preprocessor
 # (see man cpp for details on the -MM and -MT options)
-obj/%.d: src/%.c
+build/obj/%.d: src/%.c
 	@$(CPP) $(CFLAGS) $< -MM -MT $(@:.d=.o) >$@
 
-.PHONY: clean
-clean:
-	rm -f $(obj) build/$(exec)
-	rm -f $(dep)
+build/release/obj/%.d: src/%.c
+	@$(CPP) $(CFLAGS) $< -MM -MT $(@:.d=.o) >$@
 
-.PHONY: run
-run: clean $(exec)
-	build/$(exec)-$(version) $(args)
+build/test/obj/%.d: src/%.c
+	@$(CPP) $(CFLAGS) $< -MM -MT $(@:.d=.o) >$@
 
-.PHONY: test
-test: clean $(exec)
-	build/$(exec)-$(version) $(args)
 
 # this macro builds a library module and installs it in libs/
 # it also takes care of removing old versions of the library from libs/

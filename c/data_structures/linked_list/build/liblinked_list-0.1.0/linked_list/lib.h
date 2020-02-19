@@ -40,6 +40,7 @@ typedef enum {
     LL_ERROR_INDEX_OUT_OF_BOUNDS,
     LL_ERROR_INIT_FAILURE,
     LL_ERROR_MALLOC_FAILURE,
+    LL_ERROR_INSUFFICIENT_SIZE,
     LL_ERROR_INTERNAL,
 }ll_Error;
 
@@ -50,9 +51,10 @@ ll_Error ll_push(ll_LinkedList *self, void *elem);
 ll_Error ll_push_front(ll_LinkedList *self, void *elem);
 ll_Error ll_pop(ll_LinkedList *self, void *out_elem);
 ll_Error ll_pop_front(ll_LinkedList *self, void *out_elem);
+ll_Error iterate_to(const ll_LinkedList *self, struct ll_LinkedListNode **out_node, int index);
 ll_Error ll_insert(ll_LinkedList *self, int index, void *elem);
-ll_Error ll_get(const ll_LinkedList *self, int index, void *out_elem);
-ll_Error ll_remove(ll_LinkedList *self, int index);
+ll_Error ll_get(const ll_LinkedList *self, void *out_elem, int index);
+ll_Error ll_remove(ll_LinkedList *self, void *out_elem, int index);
 
 
 ll_Error ll_buf_init(ll_BufferLinkedList *self, void *buffer, int data_size);

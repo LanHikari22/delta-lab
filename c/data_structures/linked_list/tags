@@ -4,95 +4,71 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
-ASSERT_ERROR_RETURN	inc/common_macros.h	69;"	d
-ASSERT_ERROR_RETURN_FMT	inc/common_macros.h	70;"	d
-ASSERT_EXPECT	inc/common_macros.h	108;"	d
-ASSERT_EXPECT_OR_REDIR	inc/common_macros.h	139;"	d
-ASSERT_EXPECT_PASS	inc/common_macros.h	174;"	d
-ASSERT_EXPECT_PASS_OR_REDIR	inc/common_macros.h	184;"	d
-ASSERT_EXPECT_S	inc/common_macros.h	124;"	d
-ASSERT_EXPECT_S_OR_REDIR	inc/common_macros.h	153;"	d
-ASSERT_EXPECT_TRUE	inc/common_macros.h	193;"	d
-ASSERT_EXPECT_TRUE_OR_REDIR	inc/common_macros.h	202;"	d
+ASSERT	inc/common_macros.h	81;"	d
+ASSERT	inc/common_macros.h	97;"	d
+ASSERT_ERROR_RETURN	inc/common_macros.h	75;"	d
+ASSERT_ERROR_RETURN_FMT	inc/common_macros.h	76;"	d
+ASSERT_EXPECT	inc/common_macros.h	137;"	d
+ASSERT_EXPECT_OR_REDIR	inc/common_macros.h	168;"	d
+ASSERT_EXPECT_PASS	inc/common_macros.h	203;"	d
+ASSERT_EXPECT_PASS_OR_REDIR	inc/common_macros.h	213;"	d
+ASSERT_EXPECT_S	inc/common_macros.h	153;"	d
+ASSERT_EXPECT_S_OR_REDIR	inc/common_macros.h	182;"	d
+ASSERT_EXPECT_TRUE	inc/common_macros.h	222;"	d
+ASSERT_EXPECT_TRUE_OR_REDIR	inc/common_macros.h	231;"	d
+ASSERT_FMT	inc/common_macros.h	89;"	d
+ASSERT_FMT	inc/common_macros.h	98;"	d
 CFLAGS	makefile	/^CFLAGS = -Wall -ggdb $(CFLAGS_INCLUDE_LIB_HEADERS)$/;"	m
 CFLAGS_INCLUDE_LIB_HEADERS	makefile	/^CFLAGS_INCLUDE_LIB_HEADERS = -Iinc $(patsubst %, -I%, $(dir $(wildcard libs\/*\/)))$/;"	m
-COMMON_MACROS_H	build/liblinked_list-0.1.0/linked_list/common_macros.h	2;"	d
 COMMON_MACROS_H	inc/common_macros.h	2;"	d
 CUNIT_UTILS_H	libs/libcunit_utils-0.2.0/cunit_utils/lib.h	2;"	d
 CUU_ASSERT	libs/libcunit_utils-0.2.0/cunit_utils/lib.h	24;"	d
 CUU_ASSERT_EQ_U32	libs/libcunit_utils-0.2.0/cunit_utils/lib.h	33;"	d
 CUU_ASSERT_PTR_NOT_NULL	libs/libcunit_utils-0.2.0/cunit_utils/lib.h	30;"	d
 CUU_ASSERT_PTR_NULL	libs/libcunit_utils-0.2.0/cunit_utils/lib.h	27;"	d
-ERROR_ASSERT	inc/common_macros.h	56;"	d
-ERROR_ASSERT_FMT	inc/common_macros.h	63;"	d
-ERROR_NOT_IMPLEMENTED	inc/common_macros.h	73;"	d
-ERROR_NOT_IMPLEMENTED_RETURN	inc/common_macros.h	78;"	d
-ERROR_RETURN	build/liblinked_list-0.1.0/linked_list/common_macros.h	43;"	d
-ERROR_RETURN	inc/common_macros.h	42;"	d
-ERROR_RETURN_ASSERT_FAULT	build/liblinked_list-0.1.0/linked_list/common_macros.h	25;"	d
-ERROR_RETURN_ASSERT_FAULT	build/liblinked_list-0.1.0/linked_list/common_macros.h	27;"	d
-ERROR_RETURN_FMT	build/liblinked_list-0.1.0/linked_list/common_macros.h	50;"	d
-ERROR_RETURN_FMT	inc/common_macros.h	49;"	d
-ERROR_RETURN_LOG	build/liblinked_list-0.1.0/linked_list/common_macros.h	32;"	d
-ERROR_RETURN_LOG	build/liblinked_list-0.1.0/linked_list/common_macros.h	36;"	d
-ERROR_RETURN_LOG	inc/common_macros.h	31;"	d
-ERROR_RETURN_LOG	inc/common_macros.h	35;"	d
-ERROR_RETURN_LOG_FMT	build/liblinked_list-0.1.0/linked_list/common_macros.h	33;"	d
-ERROR_RETURN_LOG_FMT	build/liblinked_list-0.1.0/linked_list/common_macros.h	37;"	d
-ERROR_RETURN_LOG_FMT	inc/common_macros.h	32;"	d
-ERROR_RETURN_LOG_FMT	inc/common_macros.h	36;"	d
-EXPECT	inc/common_macros.h	101;"	d
-EXPECT_OR_ELSE	inc/common_macros.h	162;"	d
-EXPECT_OR_REDIR	inc/common_macros.h	132;"	d
-EXPECT_PASS	inc/common_macros.h	169;"	d
-EXPECT_PASS_OR_REDIR	inc/common_macros.h	180;"	d
-EXPECT_S	inc/common_macros.h	117;"	d
-EXPECT_S_OR_REDIR	inc/common_macros.h	146;"	d
-EXPECT_TRUE	inc/common_macros.h	189;"	d
-EXPECT_TRUE_OR_REDIR	inc/common_macros.h	198;"	d
+ERROR_ASSERT	inc/common_macros.h	59;"	d
+ERROR_ASSERT_FMT	inc/common_macros.h	67;"	d
+ERROR_NOT_IMPLEMENTED	inc/common_macros.h	102;"	d
+ERROR_NOT_IMPLEMENTED_RETURN	inc/common_macros.h	107;"	d
+ERROR_RAISE_ASSERT_SIGNAL	inc/common_macros.h	55;"	d
+ERROR_RETURN	inc/common_macros.h	43;"	d
+ERROR_RETURN_FMT	inc/common_macros.h	50;"	d
+ERROR_RETURN_LOG	inc/common_macros.h	32;"	d
+ERROR_RETURN_LOG	inc/common_macros.h	36;"	d
+ERROR_RETURN_LOG_FMT	inc/common_macros.h	33;"	d
+ERROR_RETURN_LOG_FMT	inc/common_macros.h	37;"	d
+EXPECT	inc/common_macros.h	130;"	d
+EXPECT_OR_ELSE	inc/common_macros.h	191;"	d
+EXPECT_OR_REDIR	inc/common_macros.h	161;"	d
+EXPECT_PASS	inc/common_macros.h	198;"	d
+EXPECT_PASS_OR_REDIR	inc/common_macros.h	209;"	d
+EXPECT_S	inc/common_macros.h	146;"	d
+EXPECT_S_OR_REDIR	inc/common_macros.h	175;"	d
+EXPECT_TRUE	inc/common_macros.h	218;"	d
+EXPECT_TRUE_OR_REDIR	inc/common_macros.h	227;"	d
 LDFLAGS	makefile	/^LDFLAGS = $(LDFLAGS_INCLUDE_LIB_DIRS) $(libs)$/;"	m
 LDFLAGS_INCLUDE_LIB_DIRS	makefile	/^LDFLAGS_INCLUDE_LIB_DIRS = -Llibs $(patsubst %, -L%, $(dir $(wildcard libs\/*\/)))$/;"	m
-LIB_H	build/liblinked_list-0.1.0/linked_list/lib.h	2;"	d
 LIB_H	inc/lib.h	2;"	d
-LL_ERROR_EMPTY_LINKED_LIST	build/liblinked_list-0.1.0/linked_list/lib.h	/^    LL_ERROR_EMPTY_LINKED_LIST,$/;"	e	enum:__anon3
-LL_ERROR_EMPTY_LINKED_LIST	inc/lib.h	/^    LL_ERROR_EMPTY_LINKED_LIST,$/;"	e	enum:__anon6
-LL_ERROR_INDEX_OUT_OF_BOUNDS	build/liblinked_list-0.1.0/linked_list/lib.h	/^    LL_ERROR_INDEX_OUT_OF_BOUNDS,$/;"	e	enum:__anon3
-LL_ERROR_INDEX_OUT_OF_BOUNDS	inc/lib.h	/^    LL_ERROR_INDEX_OUT_OF_BOUNDS,$/;"	e	enum:__anon6
-LL_ERROR_INIT_FAILURE	build/liblinked_list-0.1.0/linked_list/lib.h	/^    LL_ERROR_INIT_FAILURE,$/;"	e	enum:__anon3
-LL_ERROR_INIT_FAILURE	inc/lib.h	/^    LL_ERROR_INIT_FAILURE,$/;"	e	enum:__anon6
-LL_ERROR_INSUFFICIENT_SIZE	inc/lib.h	/^    LL_ERROR_INSUFFICIENT_SIZE,$/;"	e	enum:__anon6
-LL_ERROR_INTERNAL	build/liblinked_list-0.1.0/linked_list/lib.h	/^    LL_ERROR_INTERNAL,$/;"	e	enum:__anon3
-LL_ERROR_INTERNAL	inc/lib.h	/^    LL_ERROR_INTERNAL,$/;"	e	enum:__anon6
-LL_ERROR_MALLOC_FAILURE	build/liblinked_list-0.1.0/linked_list/lib.h	/^    LL_ERROR_MALLOC_FAILURE,$/;"	e	enum:__anon3
-LL_ERROR_MALLOC_FAILURE	inc/lib.h	/^    LL_ERROR_MALLOC_FAILURE,$/;"	e	enum:__anon6
-LL_ERROR_NULL_ELEMENT_POINTER	build/liblinked_list-0.1.0/linked_list/lib.h	/^    LL_ERROR_NULL_ELEMENT_POINTER,$/;"	e	enum:__anon3
-LL_ERROR_NULL_ELEMENT_POINTER	inc/lib.h	/^    LL_ERROR_NULL_ELEMENT_POINTER,$/;"	e	enum:__anon6
-LL_ERROR_NULL_LINKED_LIST_POINTER	build/liblinked_list-0.1.0/linked_list/lib.h	/^    LL_ERROR_NULL_LINKED_LIST_POINTER,$/;"	e	enum:__anon3
-LL_ERROR_NULL_LINKED_LIST_POINTER	inc/lib.h	/^    LL_ERROR_NULL_LINKED_LIST_POINTER,$/;"	e	enum:__anon6
-LL_ERROR_NULL_NODE_POINTER	build/liblinked_list-0.1.0/linked_list/lib.h	/^    LL_ERROR_NULL_NODE_POINTER,$/;"	e	enum:__anon3
-LL_ERROR_NULL_NODE_POINTER	inc/lib.h	/^    LL_ERROR_NULL_NODE_POINTER,$/;"	e	enum:__anon6
-LL_OK	build/liblinked_list-0.1.0/linked_list/lib.h	/^    LL_OK,$/;"	e	enum:__anon3
-LL_OK	inc/lib.h	/^    LL_OK,$/;"	e	enum:__anon6
-LOG_COND_FMT	build/liblinked_list-0.1.0/linked_list/common_macros.h	17;"	d
+LL_ERROR_EMPTY_LINKED_LIST	inc/lib.h	/^    LL_ERROR_EMPTY_LINKED_LIST,$/;"	e	enum:__anon3
+LL_ERROR_INDEX_OUT_OF_BOUNDS	inc/lib.h	/^    LL_ERROR_INDEX_OUT_OF_BOUNDS,$/;"	e	enum:__anon3
+LL_ERROR_INIT_FAILURE	inc/lib.h	/^    LL_ERROR_INIT_FAILURE,$/;"	e	enum:__anon3
+LL_ERROR_INSUFFICIENT_SIZE	inc/lib.h	/^    LL_ERROR_INSUFFICIENT_SIZE,$/;"	e	enum:__anon3
+LL_ERROR_INTERNAL	inc/lib.h	/^    LL_ERROR_INTERNAL,$/;"	e	enum:__anon3
+LL_ERROR_MALLOC_FAILURE	inc/lib.h	/^    LL_ERROR_MALLOC_FAILURE,$/;"	e	enum:__anon3
+LL_ERROR_NULL_ELEMENT_POINTER	inc/lib.h	/^    LL_ERROR_NULL_ELEMENT_POINTER,$/;"	e	enum:__anon3
+LL_ERROR_NULL_LINKED_LIST_POINTER	inc/lib.h	/^    LL_ERROR_NULL_LINKED_LIST_POINTER,$/;"	e	enum:__anon3
+LL_ERROR_NULL_NODE_POINTER	inc/lib.h	/^    LL_ERROR_NULL_NODE_POINTER,$/;"	e	enum:__anon3
+LL_OK	inc/lib.h	/^    LL_OK,$/;"	e	enum:__anon3
 LOG_COND_FMT	inc/common_macros.h	21;"	d
 LOG_DEBUG_ENABLE	src/lib.c	6;"	d	file:
-LOG_DEBUG_FMT	build/liblinked_list-0.1.0/linked_list/common_macros.h	11;"	d
-LOG_DEBUG_FMT	build/liblinked_list-0.1.0/linked_list/common_macros.h	14;"	d
 LOG_DEBUG_FMT	inc/common_macros.h	15;"	d
 LOG_DEBUG_FMT	inc/common_macros.h	18;"	d
-LOG_DEBUG_NEWLINE	build/liblinked_list-0.1.0/linked_list/common_macros.h	12;"	d
-LOG_DEBUG_NEWLINE	build/liblinked_list-0.1.0/linked_list/common_macros.h	15;"	d
 LOG_DEBUG_NEWLINE	inc/common_macros.h	16;"	d
 LOG_DEBUG_NEWLINE	inc/common_macros.h	19;"	d
-LOG_ERROR_FMT	build/liblinked_list-0.1.0/linked_list/common_macros.h	8;"	d
 LOG_ERROR_FMT	inc/common_macros.h	12;"	d
-LOG_FMT	build/liblinked_list-0.1.0/linked_list/common_macros.h	7;"	d
 LOG_FMT	inc/common_macros.h	11;"	d
-MACRO_STR	build/liblinked_list-0.1.0/linked_list/common_macros.h	4;"	d
 MACRO_STR	inc/common_macros.h	4;"	d
-MINI_INTTYPES_H	build/liblinked_list-0.1.0/linked_list/mini_inttypes.h	2;"	d
 MINI_INTTYPES_H	inc/mini_inttypes.h	2;"	d
-STR	build/liblinked_list-0.1.0/linked_list/common_macros.h	5;"	d
 STR	inc/common_macros.h	5;"	d
 assert_get_u32	src/lib.c	/^bool assert_get_u32(ll_LinkedList *ll, int index, u32 exp) {$/;"	f
 assert_get_u32_error	src/lib.c	/^bool assert_get_u32_error(ll_LinkedList *ll, int index, ll_Error exp) {$/;"	f
@@ -101,7 +77,6 @@ assert_insert_u32_error	src/lib.c	/^bool assert_insert_u32_error(ll_LinkedList *
 assert_iterate_to_u32	src/lib.c	/^bool assert_iterate_to_u32(ll_LinkedList *ll, int index, u32 exp) {$/;"	f
 assert_iterate_to_u32_error	src/lib.c	/^bool assert_iterate_to_u32_error(ll_LinkedList *ll, int index, ll_Error exp) {$/;"	f
 assert_new	src/lib.c	/^ll_LinkedList* assert_new(u32 data_size) {$/;"	f
-assert_new	tmp.java	/^ll_LinkedList*assert_new(u32data_size){$/;"	m
 assert_pop_empty_u32	src/lib.c	/^bool assert_pop_empty_u32(ll_LinkedList *ll) {$/;"	f
 assert_pop_front_empty_u32	src/lib.c	/^bool assert_pop_front_empty_u32(ll_LinkedList *ll) {$/;"	f
 assert_pop_front_u32	src/lib.c	/^bool assert_pop_front_u32(ll_LinkedList *ll, u32 exp) {$/;"	f
@@ -110,78 +85,34 @@ assert_push_front_u32	src/lib.c	/^bool assert_push_front_u32(ll_LinkedList *ll, 
 assert_push_u32	src/lib.c	/^bool assert_push_u32(ll_LinkedList *ll, u32 val) {$/;"	f
 assert_remove_u32	src/lib.c	/^bool assert_remove_u32(ll_LinkedList *ll, int index, u32 exp) {$/;"	f
 assert_remove_u32_error	src/lib.c	/^bool assert_remove_u32_error(ll_LinkedList *ll, int index, ll_Error exp) {$/;"	f
-boolassert_get_u32	tmp.java	/^boolassert_get_u32(ll_LinkedList*ll,intindex,u32exp){$/;"	m
-boolassert_get_u32_error	tmp.java	/^boolassert_get_u32_error(ll_LinkedList*ll,intindex,ll_Errorexp){$/;"	m
-boolassert_insert_u32	tmp.java	/^boolassert_insert_u32(ll_LinkedList*ll,intindex,u32data){$/;"	m
-boolassert_insert_u32_error	tmp.java	/^boolassert_insert_u32_error(ll_LinkedList*ll,intindex,u32data,ll_Errorexp){$/;"	m
-boolassert_iterate_to_u32	tmp.java	/^boolassert_iterate_to_u32(ll_LinkedList*ll,intindex,u32exp){$/;"	m
-boolassert_iterate_to_u32_error	tmp.java	/^boolassert_iterate_to_u32_error(ll_LinkedList*ll,intindex,ll_Errorexp){$/;"	m
-boolassert_pop_empty_u32	tmp.java	/^boolassert_pop_empty_u32(ll_LinkedList*ll){$/;"	m
-boolassert_pop_front_empty_u32	tmp.java	/^boolassert_pop_front_empty_u32(ll_LinkedList*ll){$/;"	m
-boolassert_pop_front_u32	tmp.java	/^boolassert_pop_front_u32(ll_LinkedList*ll,u32exp){$/;"	m
-boolassert_pop_u32	tmp.java	/^boolassert_pop_u32(ll_LinkedList*ll,u32exp){$/;"	m
-boolassert_push_front_u32	tmp.java	/^boolassert_push_front_u32(ll_LinkedList*ll,u32val){$/;"	m
-boolassert_push_u32	tmp.java	/^boolassert_push_u32(ll_LinkedList*ll,u32val){$/;"	m
-boolassert_remove_u32	tmp.java	/^boolassert_remove_u32(ll_LinkedList*ll,intindex,u32exp){$/;"	m
-boolassert_remove_u32_error	tmp.java	/^boolassert_remove_u32_error(ll_LinkedList*ll,intindex,ll_Errorexp){$/;"	m
-buffer	build/liblinked_list-0.1.0/linked_list/lib.h	/^    void *buffer;$/;"	m	struct:__anon2
-buffer	inc/lib.h	/^    void *buffer;$/;"	m	struct:__anon5
+assert_set_u32	src/lib.c	/^bool assert_set_u32(ll_LinkedList *ll, int index, u32 data) {$/;"	f
+assert_set_u32_error	src/lib.c	/^bool assert_set_u32_error(ll_LinkedList *ll, int index, u32 data, ll_Error exp) {$/;"	f
+buffer	inc/lib.h	/^    void *buffer;$/;"	m	struct:__anon2
 clean_suite	src/lib.c	/^int clean_suite(void) {$/;"	f
-data	build/liblinked_list-0.1.0/linked_list/lib.h	/^    u8 data[];$/;"	m	struct:ll_BufferLinkedListNode
-data	build/liblinked_list-0.1.0/linked_list/lib.h	/^    u8 data[];$/;"	m	struct:ll_LinkedListNode
 data	inc/lib.h	/^    u8 data[];$/;"	m	struct:ll_BufferLinkedListNode
 data	inc/lib.h	/^    u8 data[];$/;"	m	struct:ll_LinkedListNode
-data_size	build/liblinked_list-0.1.0/linked_list/lib.h	/^    const u32 data_size;$/;"	m	struct:__anon2
-data_size	build/liblinked_list-0.1.0/linked_list/lib.h	/^    u32 data_size;$/;"	m	struct:__anon1
-data_size	inc/lib.h	/^    const u32 data_size;$/;"	m	struct:__anon5
-data_size	inc/lib.h	/^    u32 data_size;$/;"	m	struct:__anon4
+data_size	inc/lib.h	/^    const u32 data_size;$/;"	m	struct:__anon2
+data_size	inc/lib.h	/^    u32 data_size;$/;"	m	struct:__anon1
 dep	makefile	/^dep = $(obj:.o=.d)$/;"	m
 exec	makefile	/^exec = $(notdir $(CURDIR))$/;"	m
 has_valid_head_tail_state	src/lib.c	/^static inline ll_Error has_valid_head_tail_state(const ll_LinkedList *self, bool *res) {$/;"	f	file:
-head	build/liblinked_list-0.1.0/linked_list/lib.h	/^    struct ll_BufferLinkedListNode *head;$/;"	m	struct:__anon2	typeref:struct:__anon2::ll_BufferLinkedListNode
-head	build/liblinked_list-0.1.0/linked_list/lib.h	/^    struct ll_LinkedListNode *head;$/;"	m	struct:__anon1	typeref:struct:__anon1::ll_LinkedListNode
-head	inc/lib.h	/^    struct ll_BufferLinkedListNode *head;$/;"	m	struct:__anon5	typeref:struct:__anon5::ll_BufferLinkedListNode
-head	inc/lib.h	/^    struct ll_LinkedListNode *head;$/;"	m	struct:__anon4	typeref:struct:__anon4::ll_LinkedListNode
-i16	build/liblinked_list-0.1.0/linked_list/mini_inttypes.h	/^typedef int16_t i16;$/;"	t
+head	inc/lib.h	/^    struct ll_BufferLinkedListNode *head;$/;"	m	struct:__anon2	typeref:struct:__anon2::ll_BufferLinkedListNode
+head	inc/lib.h	/^    struct ll_LinkedListNode *head;$/;"	m	struct:__anon1	typeref:struct:__anon1::ll_LinkedListNode
 i16	inc/mini_inttypes.h	/^typedef int16_t i16;$/;"	t
-i32	build/liblinked_list-0.1.0/linked_list/mini_inttypes.h	/^typedef int32_t i32;$/;"	t
 i32	inc/mini_inttypes.h	/^typedef int32_t i32;$/;"	t
-i64	build/liblinked_list-0.1.0/linked_list/mini_inttypes.h	/^typedef int64_t i64;$/;"	t
 i64	inc/mini_inttypes.h	/^typedef int64_t i64;$/;"	t
-i8	build/liblinked_list-0.1.0/linked_list/mini_inttypes.h	/^typedef int8_t i8;$/;"	t
 i8	inc/mini_inttypes.h	/^typedef int8_t i8;$/;"	t
 init_suite	src/lib.c	/^int init_suite(void) {$/;"	f
 install_lib	makefile	/^define install_lib$/;"	m
-intmain	tmp.java	/^intmain(void){$/;"	m
 is_index_within_get_bounds	src/lib.c	/^static inline ll_Error is_index_within_get_bounds(const ll_LinkedList *self, bool *res, int index) {$/;"	f	file:
 is_index_within_insert_bounds	src/lib.c	/^static inline ll_Error is_index_within_insert_bounds(const ll_LinkedList *self, bool *res, int index) {$/;"	f	file:
-iterate_to	src/lib.c	/^static ll_Error iterate_to(const ll_LinkedList *self, struct ll_LinkedListNode **out_node, int index) {$/;"	f	file:
-len	build/liblinked_list-0.1.0/linked_list/lib.h	/^    u32 len;$/;"	m	struct:__anon1
-len	inc/lib.h	/^    u32 len;$/;"	m	struct:__anon4
+iterate_to	src/lib.c	/^ll_Error iterate_to(const ll_LinkedList *self, struct ll_LinkedListNode **out_node, int index) {$/;"	f
+len	inc/lib.h	/^    u32 len;$/;"	m	struct:__anon1
 libs	makefile	/^libs = $(patsubst lib%, -l%, $(notdir $(basename $(wildcard libs\/*.a) $(wildcard libs\/*\/*.a)))) \\$/;"	m
-ll_BufferLinkedList	build/liblinked_list-0.1.0/linked_list/lib.h	/^}ll_BufferLinkedList;$/;"	t	typeref:struct:__anon2
-ll_BufferLinkedList	inc/lib.h	/^}ll_BufferLinkedList;$/;"	t	typeref:struct:__anon5
-ll_BufferLinkedListNode	build/liblinked_list-0.1.0/linked_list/lib.h	/^struct ll_BufferLinkedListNode {$/;"	s
+ll_BufferLinkedList	inc/lib.h	/^}ll_BufferLinkedList;$/;"	t	typeref:struct:__anon2
 ll_BufferLinkedListNode	inc/lib.h	/^struct ll_BufferLinkedListNode {$/;"	s
-ll_Error	build/liblinked_list-0.1.0/linked_list/lib.h	/^}ll_Error;$/;"	t	typeref:enum:__anon3
-ll_Error	inc/lib.h	/^}ll_Error;$/;"	t	typeref:enum:__anon6
-ll_Errorll_buf_get	tmp.java	/^ll_Errorll_buf_get(constll_BufferLinkedList*self,intindex,void**out);$/;"	m
-ll_Errorll_buf_init	tmp.java	/^ll_Errorll_buf_init(ll_BufferLinkedList*self,void*buffer,intdata_size);$/;"	m
-ll_Errorll_buf_insert	tmp.java	/^ll_Errorll_buf_insert(ll_BufferLinkedList*self,intindex,void*elem);$/;"	m
-ll_Errorll_buf_push	tmp.java	/^ll_Errorll_buf_push(ll_BufferLinkedList*self,void*elem);$/;"	m
-ll_Errorll_buf_remove	tmp.java	/^ll_Errorll_buf_remove(ll_BufferLinkedList*self,intindex);$/;"	m
-ll_Errorll_display_u32	tmp.java	/^ll_Errorll_display_u32(constll_LinkedList*self,char*res,intres_len){$/;"	m
-ll_Errorll_free	tmp.java	/^ll_Errorll_free(ll_LinkedList**self){$/;"	m
-ll_Errorll_get	tmp.java	/^ll_Errorll_get(constll_LinkedList*self,void*out_elem,intindex){$/;"	m
-ll_Errorll_insert	tmp.java	/^ll_Errorll_insert(ll_LinkedList*self,intindex,void*elem){$/;"	m
-ll_Errorll_pop	tmp.java	/^ll_Errorll_pop(ll_LinkedList*self,void*out_elem){$/;"	m
-ll_Errorll_pop_front	tmp.java	/^ll_Errorll_pop_front(ll_LinkedList*self,void*out_elem){$/;"	m
-ll_Errorll_push	tmp.java	/^ll_Errorll_push(ll_LinkedList*self,void*elem){$/;"	m
-ll_Errorll_push_front	tmp.java	/^ll_Errorll_push_front(ll_LinkedList*self,void*elem){$/;"	m
-ll_Errorll_remove	tmp.java	/^ll_Errorll_remove(ll_LinkedList*self,intindex){$/;"	m
-ll_LinkedList	build/liblinked_list-0.1.0/linked_list/lib.h	/^}ll_LinkedList;$/;"	t	typeref:struct:__anon1
-ll_LinkedList	inc/lib.h	/^}ll_LinkedList;$/;"	t	typeref:struct:__anon4
-ll_LinkedListNode	build/liblinked_list-0.1.0/linked_list/lib.h	/^struct ll_LinkedListNode {$/;"	s
+ll_Error	inc/lib.h	/^}ll_Error;$/;"	t	typeref:enum:__anon3
+ll_LinkedList	inc/lib.h	/^}ll_LinkedList;$/;"	t	typeref:struct:__anon1
 ll_LinkedListNode	inc/lib.h	/^struct ll_LinkedListNode {$/;"	s
 ll_display_u32	src/lib.c	/^ll_Error ll_display_u32(const ll_LinkedList *self, char *res, int res_len) {$/;"	f
 ll_free	src/lib.c	/^ll_Error ll_free(ll_LinkedList **self) {$/;"	f
@@ -189,47 +120,33 @@ ll_get	src/lib.c	/^ll_Error ll_get(const ll_LinkedList *self, void *out_elem, in
 ll_insert	src/lib.c	/^ll_Error ll_insert(ll_LinkedList *self, int index, void *elem) {$/;"	f
 ll_is_empty	src/lib.c	/^inline bool ll_is_empty(const ll_LinkedList *self) {$/;"	f
 ll_new	src/lib.c	/^ll_LinkedList* ll_new(u32 data_size) {$/;"	f
-ll_new	tmp.java	/^ll_LinkedList*ll_new(u32data_size){$/;"	m
 ll_pop	src/lib.c	/^ll_Error ll_pop(ll_LinkedList *self, void *out_elem) {$/;"	f
 ll_pop_front	src/lib.c	/^ll_Error ll_pop_front(ll_LinkedList *self, void *out_elem) {$/;"	f
 ll_push	src/lib.c	/^ll_Error ll_push(ll_LinkedList *self, void *elem) {$/;"	f
 ll_push_front	src/lib.c	/^ll_Error ll_push_front(ll_LinkedList *self, void *elem) {$/;"	f
 ll_remove	src/lib.c	/^ll_Error ll_remove(ll_LinkedList *self, void *out_elem, int index) {$/;"	f
+ll_set	src/lib.c	/^ll_Error ll_set(ll_LinkedList *self, int index, void *elem) {$/;"	f
 main	src/lib.c	/^int main (void) {$/;"	f
 main	src/lib.c	/^int main(void) {$/;"	f
-next	build/liblinked_list-0.1.0/linked_list/lib.h	/^    struct ll_BufferLinkedListNode *next;$/;"	m	struct:ll_BufferLinkedListNode	typeref:struct:ll_BufferLinkedListNode::ll_BufferLinkedListNode
-next	build/liblinked_list-0.1.0/linked_list/lib.h	/^    struct ll_LinkedListNode *next;$/;"	m	struct:ll_LinkedListNode	typeref:struct:ll_LinkedListNode::ll_LinkedListNode
 next	inc/lib.h	/^    struct ll_BufferLinkedListNode *next;$/;"	m	struct:ll_BufferLinkedListNode	typeref:struct:ll_BufferLinkedListNode::ll_BufferLinkedListNode
 next	inc/lib.h	/^    struct ll_LinkedListNode *next;$/;"	m	struct:ll_LinkedListNode	typeref:struct:ll_LinkedListNode::ll_LinkedListNode
-obj	makefile	/^obj = $(patsubst src\/%, obj\/%, $(src:.c=.o))$/;"	m
-olll_is_empty	tmp.java	/^inlinebo            System.out.println("error: what kind of candy is that?");olll_is_empty(constll_LinkedList*self){$/;"	m
-prev	build/liblinked_list-0.1.0/linked_list/lib.h	/^    struct ll_LinkedListNode *prev;$/;"	m	struct:ll_LinkedListNode	typeref:struct:ll_LinkedListNode::ll_LinkedListNode
+obj	makefile	/^obj = $(patsubst src\/%, build\/obj\/%, $(src:.c=.o))$/;"	m
 prev	inc/lib.h	/^    struct ll_LinkedListNode *prev;$/;"	m	struct:ll_LinkedListNode	typeref:struct:ll_LinkedListNode::ll_LinkedListNode
+release_dep	makefile	/^release_dep = $(release_obj:.o=.d)$/;"	m
+release_obj	makefile	/^release_obj = $(patsubst src\/%, build\/release\/obj\/%, $(src:.c=.o))$/;"	m
 repo_base	makefile	/^repo_base = $(shell git rev-parse --show-toplevel)$/;"	m
-self	tmp.java	/^ll_Errorll_buf_pop(ll_BufferLinkedList*self);$/;"	
 src	makefile	/^src = $(wildcard src\/*.c)$/;"	m
-staticinlinell_Errorhas_valid_head_tail_state	tmp.java	/^staticinlinell_Errorhas_valid_head_tail_state(constll_LinkedList*self,bool*res){$/;"	m
-staticinlinell_Erroris_index_within_get_bounds	tmp.java	/^staticinlinell_Erroris_index_within_get_bounds(constll_LinkedList*self,bool*res,intindex){$/;"	m
-staticinlinell_Erroris_index_within_insert_bounds	tmp.java	/^staticinlinell_Erroris_index_within_insert_bounds(constll_LinkedList*self,bool*res,intindex){$/;"	m
-staticll_Erroriterate_to	tmp.java	/^staticll_Erroriterate_to(constll_LinkedList*self,structll_LinkedListNode**out_node,intindex){$/;"	m
-tail	build/liblinked_list-0.1.0/linked_list/lib.h	/^    struct ll_BufferLinkedListNode *tail;$/;"	m	struct:__anon2	typeref:struct:__anon2::ll_BufferLinkedListNode
-tail	build/liblinked_list-0.1.0/linked_list/lib.h	/^    struct ll_LinkedListNode *tail;$/;"	m	struct:__anon1	typeref:struct:__anon1::ll_LinkedListNode
-tail	inc/lib.h	/^    struct ll_BufferLinkedListNode *tail;$/;"	m	struct:__anon5	typeref:struct:__anon5::ll_BufferLinkedListNode
-tail	inc/lib.h	/^    struct ll_LinkedListNode *tail;$/;"	m	struct:__anon4	typeref:struct:__anon4::ll_LinkedListNode
-test_insert_get_remove	src/lib.c	/^void test_insert_get_remove(void) {$/;"	f
+tail	inc/lib.h	/^    struct ll_BufferLinkedListNode *tail;$/;"	m	struct:__anon2	typeref:struct:__anon2::ll_BufferLinkedListNode
+tail	inc/lib.h	/^    struct ll_LinkedListNode *tail;$/;"	m	struct:__anon1	typeref:struct:__anon1::ll_LinkedListNode
+test_dep	makefile	/^test_dep = $(test_obj:.o=.d)$/;"	m
+test_display	src/lib.c	/^void test_display(void) {$/;"	f
+test_insert_get_set_remove	src/lib.c	/^void test_insert_get_set_remove(void) {$/;"	f
 test_iterate_to	src/lib.c	/^void test_iterate_to(void) {$/;"	f
+test_obj	makefile	/^test_obj = $(patsubst src\/%, build\/test\/obj\/%, $(src:.c=.o))$/;"	m
 test_pushpop	src/lib.c	/^void test_pushpop(void) {$/;"	f
 test_pushpop_front	src/lib.c	/^void test_pushpop_front(void) {$/;"	f
-u16	build/liblinked_list-0.1.0/linked_list/mini_inttypes.h	/^typedef uint16_t u16;$/;"	t
 u16	inc/mini_inttypes.h	/^typedef uint16_t u16;$/;"	t
-u32	build/liblinked_list-0.1.0/linked_list/mini_inttypes.h	/^typedef uint32_t u32;$/;"	t
 u32	inc/mini_inttypes.h	/^typedef uint32_t u32;$/;"	t
-u64	build/liblinked_list-0.1.0/linked_list/mini_inttypes.h	/^typedef uint64_t u64;$/;"	t
 u64	inc/mini_inttypes.h	/^typedef uint64_t u64;$/;"	t
-u8	build/liblinked_list-0.1.0/linked_list/mini_inttypes.h	/^typedef uint8_t u8;$/;"	t
 u8	inc/mini_inttypes.h	/^typedef uint8_t u8;$/;"	t
 version	makefile	/^version = 0.1.0$/;"	m
-voidtest_insert_get_remove	tmp.java	/^voidtest_insert_get_remove(void){$/;"	m
-voidtest_iterate_to	tmp.java	/^voidtest_iterate_to(void){$/;"	m
-voidtest_pushpop	tmp.java	/^voidtest_pushpop(void){$/;"	m
-voidtest_pushpop_front	tmp.java	/^voidtest_pushpop_front(void){$/;"	m

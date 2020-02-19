@@ -21,6 +21,10 @@ int int_iDiv(const int *self, int *res, int b) {
     return 0;
 }
 
+void x(void) {
+    return ;
+}
+
 
 int main(void) {
     int res = EXPECT(int, iDiv, 10, 3);

@@ -254,7 +254,7 @@ ll_Error iterate_to(const ll_LinkedList *self, struct ll_LinkedListNode **out_no
         }
     }
     
-    if (target == NULL) ASSERT_ERROR_RETURN(LL_ERROR_INTERNAL);
+    if (target == NULL) ERROR_RETURN(LL_ERROR_INTERNAL);
     *out_node = target;
     return LL_OK;
 }
@@ -312,7 +312,19 @@ ll_Error ll_insert(ll_LinkedList *self, int index, void *elem) {
 ///     || LL_ERROR_INDEX_OUT_OF_BOUNDS
 ///     || LL_ERROR_INTERNAL
 ll_Error ll_set(ll_LinkedList *self, int index, void *elem) {
+    if (self == NULL) return LL_ERROR_NULL_LINKED_LIST_POINTER;
+    if (elem == NULL) return LL_ERROR_NULL_ELEMENT_POINTER;
+    if (!EXPECT_S(is_index_within_get_bounds, self, bool, index)) return LL_ERROR_INDEX_OUT_OF_BOUNDS;
+    if (!EXPECT_S(has_valid_head_tail_state, self, bool)) ERROR_RETURN(LL_ERROR_INTERNAL);
+
+    // iterate to target node to retrieve (or error return)
+    struct ll_LinkedListNode *target = EXPECT_S(iterate_to, self, struct ll_LinkedListNode*, index);
+
+    // retrieve target node data
+    if (target == NULL) ERROR_RETURN(LL_ERROR_INTERNAL);
+    memcpy(target->data, elem, self->data_size);
     
+    return LL_OK;
 }
 
 /// retrieves the data in a node at an index without removing that node.
@@ -399,6 +411,7 @@ int main(void) {
 #include <stdlib.h>
 #include <stdbool.h>
 #include <inttypes.h>
+#include <time.h>
 #include "CUnit/CUnit.h"
 #include "CUnit/Basic.h"
 #include "cunit_utils/lib.h"
@@ -485,7 +498,20 @@ bool assert_insert_u32(ll_LinkedList *ll, int index, u32 data) {
 
 bool assert_insert_u32_error(ll_LinkedList *ll, int index, u32 data, ll_Error exp) {
     ll_Error status = ll_insert(ll, index, &data);
-    EXPECT_TRUE(CUU_ASSERT(status == exp));
+    EXPECT_TRUE(CUU_ASSERT_EQ_U32(status, exp));
+    return true;
+}
+
+bool assert_set_u32(ll_LinkedList *ll, int index, u32 data) {
+    ll_Error status = ll_set(ll, index, &data);
+    EXPECT_TRUE(CUU_ASSERT_EQ_U32(status, LL_OK));
+    EXPECT_TRUE(assert_iterate_to_u32(ll, index, data));
+    return true;
+}
+
+bool assert_set_u32_error(ll_LinkedList *ll, int index, u32 data, ll_Error exp) {
+    ll_Error status = ll_set(ll, index, &data);
+    EXPECT_TRUE(CUU_ASSERT_EQ_U32(status, exp));
     return true;
 }
 
@@ -530,12 +556,20 @@ ll_Error ll_display_u32(const ll_LinkedList *self, char *res, int res_len) {
     if (!EXPECT_S(has_valid_head_tail_state, self, bool)) ERROR_RETURN(LL_ERROR_INTERNAL);
 
     char *res_cur = res;
-    strncat(res_cur++, "[", res_len);
+    strncpy(res_cur++, "[", res_len);
 
     for(struct ll_LinkedListNode *n = self->head; n != NULL; n = n->next) {
         u32 data = *(u32*)n->data;
         int remaining_len = res_len - (res_cur - res);
-        int chars_written = snprintf(res_cur, remaining_len, "%d, ", data);
+
+        int chars_written;
+        if (n->next == NULL) {
+            // don't include a trailing comma for last element
+            chars_written = snprintf(res_cur, remaining_len, "%d", data);
+        } else {
+            chars_written = snprintf(res_cur, remaining_len, "%d, ", data);
+        }
+        
         if (chars_written > remaining_len) return LL_ERROR_INSUFFICIENT_SIZE;
         if (chars_written < 0) ERROR_RETURN(LL_ERROR_INTERNAL);
         res_cur += chars_written;
@@ -544,7 +578,6 @@ ll_Error ll_display_u32(const ll_LinkedList *self, char *res, int res_len) {
 
     if (remaining_len < 1) return LL_ERROR_INSUFFICIENT_SIZE;
     strncat(res_cur++, "]", remaining_len);
-
     return LL_OK;
 }
 
@@ -657,7 +690,7 @@ void test_iterate_to(void) {
     CUU_ASSERT_PTR_NULL(ll);
 }
 
-void test_insert_get_remove(void) {
+void test_insert_get_set_remove(void) {
     ll_LinkedList *ll = assert_new(/*data_size*/ 4);
 
     // initial insert get remove test
@@ -677,9 +710,13 @@ void test_insert_get_remove(void) {
     CUU_ASSERT(assert_pop_empty_u32(ll));
 
     // using insert like a push to tail
-    CUU_ASSERT(assert_insert_u32(ll, 0, 0x111));
-    CUU_ASSERT(assert_insert_u32(ll, 1, 0x222));
-    CUU_ASSERT(assert_insert_u32(ll, 2, 0x333));
+    CUU_ASSERT(assert_insert_u32(ll, 0, 0));
+    CUU_ASSERT(assert_insert_u32(ll, 1, 1));
+    CUU_ASSERT(assert_insert_u32(ll, 2, 2));
+    CUU_ASSERT(assert_set_u32(ll, 0, 0x111));
+    CUU_ASSERT(assert_set_u32(ll, 1, 0x222));
+    CUU_ASSERT(assert_set_u32(ll, 2, 0x333));
+    CUU_ASSERT(assert_set_u32_error(ll, 3, 0x404, LL_ERROR_INDEX_OUT_OF_BOUNDS));
     CUU_ASSERT(assert_insert_u32_error(ll, 4, 0x404, LL_ERROR_INDEX_OUT_OF_BOUNDS)); // beyond tail->next!
     CUU_ASSERT(assert_get_u32(ll, 0, 0x111));
     CUU_ASSERT(assert_get_u32(ll, 2, 0x333));
@@ -698,9 +735,17 @@ void test_display(void) {
     // initialize seed
     srand(time(NULL));
 
-    for (int i=0; i<50; i++) {
-        int rand_num = rand() % 50;
+    ll_LinkedList *ll = assert_new(4);
+
+    for (int i=0; i<10; i++) {
+        u32 rand_num = rand() % 50;
+        ll_push(ll, &rand_num);
     }
+    char s[256];
+    if (ll_display_u32(ll, s, 255) != LL_OK) return;
+    printf("%s", s);
+
+    ll_free(&ll);
 }
 
 int init_suite(void) {
@@ -728,7 +773,8 @@ int main (void) {
     status = CUU_utils_try_add_test(suites[0], test_pushpop, "\n\nTesting " STR(test_pushpop) "()\n\n");
     status = CUU_utils_try_add_test(suites[0], test_pushpop_front, "\n\nTesting " STR(test_pushpop_front) "()\n\n");
     status = CUU_utils_try_add_test(suites[0], test_iterate_to, "\n\nTesting " STR(test_iterate_to) "()\n\n");
-    status = CUU_utils_try_add_test(suites[0], test_insert_get_remove, "\n\nTesting " STR(test_insert_get_remove) "()\n\n");
+    status = CUU_utils_try_add_test(suites[0], test_insert_get_set_remove, "\n\nTesting " STR(test_insert_get_set_remove) "()\n\n");
+    status = CUU_utils_try_add_test(suites[0], test_display, "\n\nTesting " STR(test_display) "()\n\n");
     if (status != CUE_SUCCESS) return status;
 
     CU_basic_run_tests(); // OUTPUT to the screen
