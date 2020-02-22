@@ -25,15 +25,26 @@ void x(void) {
     return ;
 }
 
-
-int main(void) {
-    int res = EXPECT(int, iDiv, 10, 3);
+int expect_experiments(void) {
+    int res = EXPECT(iDiv, int, 10, 3);
     LOG_DEBUG_FMT("res: %d", res);
     int a = 10;
-    res = EXPECT_S(int, int_iDiv, &a, 2);
+    res = EXPECT_S(int_iDiv, &a, int, 2);
     LOG_DEBUG_FMT("res: %d", res);
-    LOG_DEBUG_FMT("<anon>+<anon>: %d", EXPECT(int, iDiv, 10, 3) + EXPECT(int, iDiv, 10, 5)); // 5
-    LOG_DEBUG_FMT("<anon>+<err>: %d", EXPECT(int, iDiv, 10, 3) + EXPECT_OR_ELSE(int, 10, iDiv, 10, 0)); // 13
+    LOG_DEBUG_FMT("<anon>+<anon>: %d", EXPECT(iDiv, int, 10, 3) + EXPECT(iDiv, int, 10, 5)); // 5
+    LOG_DEBUG_FMT("<anon>+<err>: %d", EXPECT(iDiv, int, 10, 3) + EXPECT_OR_ELSE(10, iDiv, int, 10, 0)); // 13
+    return 0;
+}
+
+int main(void) {
+    int *a[10];
+    int (* b[10]);
+
+    DEBUG_LN("size(a): %ld", sizeof(a));
+    DEBUG_LN("size(a[0]): %ld", sizeof(a[0]));
+    DEBUG_LN("size(b): %ld", sizeof(b));
+    DEBUG_LN("size(b[0]): %ld", sizeof(b[0]));
+    
     return 0;
 }
 
