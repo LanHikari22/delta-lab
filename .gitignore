@@ -16,6 +16,9 @@ target/
 *.o
 *.d
 
+# C makefile build
+build/
+
 # stm32 compilation
 *.list
 o/
@@ -25,3 +28,6 @@ simulation/
 output_files/
 incremental_db/
 db/
+
+# git worktree for multiple branch work
+wt/
