@@ -5,11 +5,13 @@
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
 DNABaseReport	/home/lan/dev/delta-lab/puzzles/rosalind/dna/src/main.rs	/^struct DNABaseReport {$/;"	s
-DNAError	/home/lan/dev/delta-lab/puzzles/rosalind/dna/src/main.rs	/^enum DNAError {$/;"	g
-complement_dna_base	/home/lan/dev/delta-lab/puzzles/rosalind/dna/src/main.rs	/^fn complement_dna_base(base: char) -> Result<char, DNAError> {$/;"	f
-count_dna_bases	/home/lan/dev/delta-lab/puzzles/rosalind/dna/src/main.rs	/^fn count_dna_bases(dna_str: &str) -> Result<DNABaseReport, DNAError> {$/;"	f
-dna_calc_gc_content	/home/lan/dev/delta-lab/puzzles/rosalind/dna/src/main.rs	/^fn dna_calc_gc_content(dna_str: &str) -> Result<f32, DNAError> {$/;"	f
-dna_revc	/home/lan/dev/delta-lab/puzzles/rosalind/dna/src/main.rs	/^fn dna_revc(dna_str: &str) -> Result<String, DNAError> {$/;"	f
+calculate_largest_gc_content	/home/lan/dev/delta-lab/puzzles/rosalind/dna/src/main.rs	/^fn calculate_largest_gc_content(dna_seq_map: &HashMap<String, String>) -> (&str, f32) {$/;"	f
+complement_dna_base	/home/lan/dev/delta-lab/puzzles/rosalind/dna/src/main.rs	/^fn complement_dna_base(base: char) -> char {$/;"	f
+count_dna_bases	/home/lan/dev/delta-lab/puzzles/rosalind/dna/src/main.rs	/^fn count_dna_bases(dna_str: &str) -> DNABaseReport {$/;"	f
+dna_calc_gc_content	/home/lan/dev/delta-lab/puzzles/rosalind/dna/src/main.rs	/^fn dna_calc_gc_content(dna_str: &str) -> f32 {$/;"	f
+dna_calc_hamming_dist	/home/lan/dev/delta-lab/puzzles/rosalind/dna/src/main.rs	/^fn dna_calc_hamming_dist(dna_seq_a: &str, dna_seq_b: &str) -> f32 {$/;"	f
+dna_revc	/home/lan/dev/delta-lab/puzzles/rosalind/dna/src/main.rs	/^fn dna_revc(dna_str: &str) -> String {$/;"	f
+is_valid_dna_base	/home/lan/dev/delta-lab/puzzles/rosalind/dna/src/main.rs	/^fn is_valid_dna_base(base: char) -> bool {$/;"	f
 is_valid_dna_string	/home/lan/dev/delta-lab/puzzles/rosalind/dna/src/main.rs	/^fn is_valid_dna_string(dna_str: &str) -> bool {$/;"	f
 is_valid_rna_string	/home/lan/dev/delta-lab/puzzles/rosalind/dna/src/main.rs	/^fn is_valid_rna_string(dna_str: &str) -> bool {$/;"	f
 main	/home/lan/dev/delta-lab/puzzles/rosalind/dna/src/main.rs	/^fn main() {$/;"	f
@@ -20,4 +22,4 @@ test_dna_calc_gc_content	/home/lan/dev/delta-lab/puzzles/rosalind/dna/src/main.r
 test_dna_revc	/home/lan/dev/delta-lab/puzzles/rosalind/dna/src/main.rs	/^    fn test_dna_revc() {$/;"	f
 test_to_rna	/home/lan/dev/delta-lab/puzzles/rosalind/dna/src/main.rs	/^    fn test_to_rna() {$/;"	f
 tests	/home/lan/dev/delta-lab/puzzles/rosalind/dna/src/main.rs	/^mod tests {$/;"	m
-to_rna	/home/lan/dev/delta-lab/puzzles/rosalind/dna/src/main.rs	/^fn to_rna(dna_str: &str) -> Result<String, DNAError> {$/;"	f
+to_rna	/home/lan/dev/delta-lab/puzzles/rosalind/dna/src/main.rs	/^fn to_rna(dna_str: &str) -> String {$/;"	f

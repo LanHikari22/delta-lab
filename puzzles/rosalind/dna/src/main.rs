@@ -57,6 +57,24 @@ fn read_fasta_format(path: &str) -> Option<HashMap<String, String>> {
     Some(out)
 }
 
+// TODO: impl methods for DNA/RNA structs
+
+enum DNABase {
+    A, C, G, T,
+}
+
+enum RNABase {
+    A, C, G, U,
+}
+
+struct DNASeq {
+    pub seq: Vec<DNABase>,
+}
+
+struct RNASeq {
+    pub seq: Vec<RNABase>
+}
+
 
 /// represents count of each base
 #[derive(Debug, PartialEq)]
@@ -68,16 +86,7 @@ struct DNABaseReport {
 }
 
 
-#[derive(Debug, PartialEq)]
-enum DNAError {
-    InvalidDNASequence,
-    InvalidDNABase(char),
-    InvalidRNASequence,
-    InvalidRNABase(char),
-    UnequalSequences,
-}
-
-
+/// a valid DNA sequence contains only the symbols A, C, G, T, and whitespace.
 fn is_valid_dna_string(dna_str: &str) -> bool {
     for c in dna_str.chars().filter(|c| !c.is_whitespace()) {
         if c != 'A' && c != 'C' && c != 'G' && c != 'T' {return false;}
@@ -85,7 +94,7 @@ fn is_valid_dna_string(dna_str: &str) -> bool {
     true
 }
 
-
+/// a valid RNA sequence contains only the symbols A, C, G, U, and whitespace.
 fn is_valid_rna_string(dna_str: &str) -> bool {
     for c in dna_str.chars().filter(|c| !c.is_whitespace()) {
         if c != 'A' && c != 'C' && c != 'G' && c != 'U' {return false;}
@@ -93,11 +102,20 @@ fn is_valid_rna_string(dna_str: &str) -> bool {
     true
 }
 
+/// a valid DNA base character must be A, C, G, T, or whitespace.
+fn is_valid_dna_base(base: char) -> bool {
+    base == 'A' || base == 'C' || base == 'G' || base == 'T' || base.is_whitespace()
+}
+
+fn is_valid_rna_base(base: char) -> bool {
+    base == 'A' || base == 'C' || base == 'G' || base == 'U' || base.is_whitespace()
+}
+
 
 /// reads a DNA string and returns count of its 4 base symbols: A, C, G and T.
-/// @expects #dna_str to be a valid DNA string: (containing only A, C, G, T or white space symbols)
-///     else returns InvalidDNASequence
-fn count_dna_bases(dna_str: &str) -> Result<DNABaseReport, DNAError> {
+/// @pre is_valid_dna_string(dna_str)
+fn count_dna_bases(dna_str: &str) -> DNABaseReport {
+    assert!(is_valid_dna_string(dna_str));
     let mut report = DNABaseReport {a: 0, c: 0, g: 0, t: 0};
 
     // count bases
@@ -107,52 +125,67 @@ fn count_dna_bases(dna_str: &str) -> Result<DNABaseReport, DNAError> {
             'C' => report.c += 1,
             'G' => report.g += 1,
             'T' => report.t += 1,
-            _ => return Err(DNAError::InvalidDNASequence),
+            _ => unreachable!("invalid state for a valid DNA string"),
         }
     }
 
-    Ok(report)
+    report
 }
 
 
 /// converts a DNA sequence to an RNA sequence
-/// @expects #dna_str to be a valid DNA sequence
-fn to_rna(dna_str: &str) -> Result<String, DNAError> {
-    if !is_valid_dna_string(dna_str) {return Err(DNAError::InvalidDNASequence)}
-    Ok(dna_str.replace("T", "U"))
+/// @pre is_valid_dna_string(dna_str)
+fn to_rna(dna_str: &str) -> String {
+    assert!(is_valid_dna_string(dna_str));
+    dna_str.replace("T", "U")
+}
+
+/// @pre is_valid_rna_string(rna_codon)
+/// @pre rna_codon.len() == 3
+fn to_protein_base(rna_codon: &str) -> char {
+    assert!(is_valid_rna_string(rna_codon));
+    assert!(rna_codon.len() == 3);
+
+    unimplemented!();
+    
 }
 
 
-fn complement_dna_base(base: char) -> Result<char, DNAError> {
+/// takes the complementary of a DNA base. Complementary pairs must always go together
+/// in two strands of DNA: AT and CG.
+/// @pre is_valid_dna_base(base)
+fn complement_dna_base(base: char) -> char {
+    assert!(is_valid_dna_base(base));
     match base {
-        'A' => Ok('T'),
-        'C' => Ok('G'),
-        'G' => Ok('C'),
-        'T' => Ok('A'),
-        _ => Err(DNAError::InvalidDNABase(base)),
+        'A' => 'T',
+        'C' => 'G',
+        'G' => 'C',
+        'T' => 'A',
+        _ => unreachable!("invalid state for a valid DNA base"),
     }
 }
 
 
 /// genereates the reverse complement of a DNA string
-/// @expects #dna_str to be a valid DNA sequence
-fn dna_revc(dna_str: &str) -> Result<String, DNAError> {
-    if !is_valid_dna_string(dna_str) {return Err(DNAError::InvalidDNASequence)}
+/// @pre is_valid_dna_string(dna_str)
+fn dna_revc(dna_str: &str) -> String {
+    assert!(is_valid_dna_string(dna_str));
 
     let mut v = dna_str.chars()
         .filter(|c| !c.is_whitespace())
-        .map(|c| complement_dna_base(c).unwrap())
+        .map(|c| complement_dna_base(c))
         .collect::<Vec<_>>();
     v.reverse();
 
-    Ok(v.iter().collect::<String>())
+    v.iter().collect::<String>()
 }
 
 
 /// calculate the GC content if a DNA sequence. The GC sequence is the ratio
 /// of G and C bases present against other symbols
-fn dna_calc_gc_content(dna_str: &str) -> Result<f32, DNAError> {
-    if !is_valid_dna_string(dna_str) {return Err(DNAError::InvalidDNASequence)}
+/// @pre is_valid_dna_string(dna_str)
+fn dna_calc_gc_content(dna_str: &str) -> f32 {
+    assert!(is_valid_dna_string(dna_str));
 
     let mut symbols = 0;
     let mut gc_symbols = 0;
@@ -161,7 +194,7 @@ fn dna_calc_gc_content(dna_str: &str) -> Result<f32, DNAError> {
         symbols += 1;
     }
     
-    Ok(gc_symbols as f32 / symbols as f32)
+    gc_symbols as f32 / symbols as f32
 }
 
 /// calculates the GC content of all DNA sequences in #dna_seq_map and returns
@@ -170,13 +203,14 @@ fn calculate_largest_gc_content(dna_seq_map: &HashMap<String, String>) -> (&str,
     let mut max_name: Option<&str> = None;
     let mut max_gc: Option<f32> = None;
     for name in dna_seq_map.keys() {
-        println!("{}: {}", name, dna_calc_gc_content(&dna_seq_map[name]).unwrap() * 100f32);
+        // println!("{}: {}", name, dna_calc_gc_content(&dna_seq_map[name]) * 100f32);
+        
         if max_name.is_none() {
             assert!(max_gc.is_none());
             max_name = Some(name);
-            max_gc = Some(dna_calc_gc_content(&dna_seq_map[name]).unwrap());
+            max_gc = Some(dna_calc_gc_content(&dna_seq_map[name]));
         } else {
-            let gc = dna_calc_gc_content(&dna_seq_map[name]).unwrap();
+            let gc = dna_calc_gc_content(&dna_seq_map[name]);
             if gc > max_gc.unwrap() {
                 max_name = Some(name);
                 max_gc = Some(gc);
@@ -187,19 +221,24 @@ fn calculate_largest_gc_content(dna_seq_map: &HashMap<String, String>) -> (&str,
     (&max_name.unwrap(), max_gc.unwrap())
 }
 
-fn dna_calc_hamming_dist(dna_seq_a: &str, dna_seq_b: &str) -> Result<f32, DNAError> {
-    if !is_valid_dna_string(dna_seq_a) {return Err(DNAError::InvalidDNASequence)}
-    if !is_valid_dna_string(dna_seq_b) {return Err(DNAError::InvalidDNASequence)}
-    if dna_seq_a.len() != dna_seq_b.len() {return Err(DNAError::)}
+/// calculates the hamming distance of two equal-length DNA sequences
+/// @pre is_valid_dna_string(dna_seq_a)
+/// @pre is_valid_dna_string(dna_seq_b)
+/// @pre dna_seq_a.len() == dna_seq_b.len()
+fn dna_calc_hamming_dist(dna_seq_a: &str, dna_seq_b: &str) -> i32 {
+    assert!(is_valid_dna_string(dna_seq_a));
+    assert!(is_valid_dna_string(dna_seq_b));
+    assert!(dna_seq_a.len() == dna_seq_b.len());
 
-    unimplemented!();
+    dna_seq_a.chars().zip(dna_seq_b.chars())
+        .map(|(c1, c2)| if c1 != c2 {1} else {0})
+        .sum()
 }
 
 fn main() {
-    let dna_seq_map = read_fasta_format("inputs/gc/test1").unwrap();
-    let (name, gc) = calculate_largest_gc_content(&dna_seq_map);
-    println!("{}", name);
-    println!("{}", gc * 100.0);
+    let a = "CTGTAACCTTACAGGGTATGTCACTGGCCTCAATGATCAGACATTTCAACGACCGGTGAGCTTCTTTACCAGGGGCCGGTTGAACCTTGACACTCGTAACCTAAGATAGGACTGGACCTGCAGTAAAACCACGATGGGTTGAATGCTACTGTTCATGGCCCCACTACGCTGAATGATGGAATCATTAGTCTGCACTGACTGGTTGTGTCATTGATTGCCTACACCATAGATCCGTTGCTGGCGAAACCGGCTGCGCGCTTACCGCCAGTGAAGCGACGCCTATGCGATTACTAATTTTACGGATGGTTTACAGTGTCGAACGCCGGTCTGGATCATCTAGGAGGGCATCCCCTGATTCCGTACGGCCAGGTCAAATAAACCTCTGATGTCCGTCGCGGTGATCGCGATGTCGAGTGTAGAAGGAGAACCATTCTTTAAGGGACGACAGCGGTCAGTTATTACTATTTATCCCGGGGCAGACAGTATAGTCTCGGCCCATGCGCATACAGGGTAAGCATACCTGTCCCGCAGATAGTCGTTTGTCATCAATTGCAACATGCGTGCATAGTCCCAAAACCAGTGCCCTTGGGGTTGCCTTAAGGTGGTGATTTGAATGTGGCCAACAGATCATAGACCCTCAACCTTCATGCCTGTTATGATACACTTTCCGGCGACGCCGAAGTCCTTAGTCGGGAACGCAAATCATACCGACAGAACATTGCCTCCAACCGGCTAACGCTCATCGAACCCCCCCTAAAGTGGGCCCGACGACCTCTGGTGAGGTTAACGTGTCTATGCCTTAAGTCCACTGTCAATCCCTCCCACCTCGCCCACTTCTGTTCAATTGTTCTTGAATACGCCTCTCCACGAGCAAGATGTGGTGAGCTCACGCTTTGCACAAGGCCAGTAGGGGTGGCGCGGTCGACTTTGTTGGAAAGTACCCAAGCGTCTGTACCGGGCATGCCAGAGAGAGAATAAGGGGTTAT";
+    let b = "CTGTCACTATTTAGGGTTTGACTCTGGTCGCGAGGCTGGTAGCGCCCCACCACTGGGGTGCTTCATCGGCGGGGTCGGGCAGAAGGCCGTCCAGGGTCCTCTTGAATAGAACATGTCCTGCGGTAACATTAAGCCGGCCGGGACCGCCCAGGACCGTCTCGTCCCACACCCAATCATGGTCCTTCCTGTGCGCTTCGGATAACCAGGGCTAGGAGTACCGGTCACTTGGAACCCGAGCATGAGCAACAGATGGCTAGCCAACCAACAGGGGAGATGCGCCAGTTATATCACAAGGCTCCCCTCTAGTTTCAAATACCTAGAACCGGCCTGACTTCTCTAGCATCGCTTATCCTGTATAGGCATGTATAGACCTAACAATACGTTCGATTGACCTGCTGGTGAAACGTACCTGATCTTACATAGACACATCTTTTCTGGGGGAGGCAAGCGAATGGTTATGGCTCGCTGTCCCTCCTAGGACCGGACATTGACCTTGTATGCCGGTACCCCGTAGGAGTGAACCTCCCTGATTGAATCAGAGCACACCGCTTAAGTTGTTAGCAATTACTACCTGGATGCTTGCACTAGTGCGTGCCGCAAACTGGTGATGCGAGCGGCGCCGGAGTATCAAGGACTAATTGATTTTAACCAGGTTAAGTGACACATTACCACGTTAGCGACCTCTTAATCCCGGCAGTTTGATTAGCCCCATCGATCTGTCTTTCCATACAAACTAATCTACGAGAATTCGACCGCTACGAGTACCGAGTCACCCTACTGTGGTAGGAGCGAATGGCTCGTCACTACAGAGACTATCCCGGCCTCATACCCCAAGACTTGATTAGAAGTGCTCCATTCTGCGATCCCCGCTCCCGTCGCGGTGTGCTGGCCTTAAGGCGAATAAATTTAGGCATTGCGCTGTCCCAGCCACTGTGGCAGGTCGAAGTGTGTGTCCCGGGCACAACATGGTGCAACTAATCTGATAT";
+    println!("{}", dna_calc_hamming_dist(a, b));
 }
 
 
@@ -209,22 +248,27 @@ mod tests {
 
     #[test]
     fn test_to_rna() {
-        assert_eq!(to_rna("GATGGAACTTGACTACGTAAATT").unwrap(), "GAUGGAACUUGACUACGUAAAUU");
-        assert_eq!(to_rna("GATGGAACTTGACTACGTAAATU").unwrap_err(), DNAError::InvalidDNASequence);
+        assert_eq!(to_rna("GATGGAACTTGACTACGTAAATT"), "GAUGGAACUUGACUACGUAAAUU");
+        // assert_eq!(to_rna("GATGGAACTTGACTACGTAAATU").unwrap_err(), DNAError::InvalidDNASequence);
     }
 
     #[test]
     fn test_dna_revc() {
-        assert_eq!(dna_revc("AAAACCCGGT").unwrap(), "ACCGGGTTTT");
-        assert_eq!(dna_revc("AAAACCCGGU").unwrap_err(), DNAError::InvalidDNASequence);
+        assert_eq!(dna_revc("AAAACCCGGT"), "ACCGGGTTTT");
+        // assert_eq!(dna_revc("AAAACCCGGU").unwrap_err(), DNAError::InvalidDNASequence);
     }
 
     #[test]
     fn test_dna_calc_gc_content() {
-        assert_eq!(dna_calc_gc_content("AGCTATAG").unwrap(), 0.375);
+        assert_eq!(dna_calc_gc_content("AGCTATAG"), 0.375);
 
         // every DNA sequence and its complement must have the same GC content!
-        assert_eq!(dna_calc_gc_content("AGCTATAG").unwrap(), dna_calc_gc_content(&dna_revc("AGCTATAG").unwrap()).unwrap());
+        assert_eq!(dna_calc_gc_content("AGCTATAG"), dna_calc_gc_content(&dna_revc("AGCTATAG")));
+    }
+
+    #[test]
+    fn test_dna_calc_hamming_dist() {
+        assert_eq!(dna_calc_hamming_dist("GAGCCTACTAACGGGAT", "CATCGTAATGACGGCCT"), 7);
     }
 
 }

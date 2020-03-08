@@ -1,0 +1,11 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+calc_fib_rabbit_pairs	/home/lan/dev/delta-lab/puzzles/rosalind/perm/src/main.rs	/^fn calc_fib_rabbit_pairs(n: u64, k: u64) -> u64 {$/;"	f
+main	/home/lan/dev/delta-lab/puzzles/rosalind/perm/src/main.rs	/^fn main() {$/;"	f
+read_input	/home/lan/dev/delta-lab/puzzles/rosalind/perm/src/main.rs	/^fn read_input(input_path: &str) -> String {$/;"	f
+test_calc_fib_rabbit_pairs	/home/lan/dev/delta-lab/puzzles/rosalind/perm/src/main.rs	/^    fn test_calc_fib_rabbit_pairs() {$/;"	f
+tests	/home/lan/dev/delta-lab/puzzles/rosalind/perm/src/main.rs	/^mod tests {$/;"	m
