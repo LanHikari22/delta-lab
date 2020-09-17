@@ -1,7 +1,0 @@
-package benchtest_utils is
-
-end package
-
-package body benchtest_utils is
-
-end package;
