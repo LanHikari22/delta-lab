@@ -1,9 +1,10 @@
+// DNA
 #![allow(dead_code)]
-// for reading from file
-use std::path::Path;
+
+use std::path::Path;            // for reading from file
 // use std::error::Error;
 use std::fs::File;
-use std::io::prelude::*; // needed for traits like the Read trait
+use std::io::prelude::*;        // needed for traits like the Read trait
 
 use std::collections::HashMap;
 
@@ -89,7 +90,8 @@ struct DNABaseReport {
 /// a valid DNA sequence contains only the symbols A, C, G, T, and whitespace.
 fn is_valid_dna_string(dna_str: &str) -> bool {
     for c in dna_str.chars().filter(|c| !c.is_whitespace()) {
-        if c != 'A' && c != 'C' && c != 'G' && c != 'T' {return false;}
+        if c != 'A' && c != 'C' && c != 'G' && c != 'T' 
+            {return false;}
     }
     true
 }
@@ -97,7 +99,8 @@ fn is_valid_dna_string(dna_str: &str) -> bool {
 /// a valid RNA sequence contains only the symbols A, C, G, U, and whitespace.
 fn is_valid_rna_string(dna_str: &str) -> bool {
     for c in dna_str.chars().filter(|c| !c.is_whitespace()) {
-        if c != 'A' && c != 'C' && c != 'G' && c != 'U' {return false;}
+        if c != 'A' && c != 'C' && c != 'G' && c != 'U' 
+            {return false;}
     }
     true
 }
