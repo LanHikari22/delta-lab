@@ -14,5 +14,7 @@ A repository hosting my solutions to various programming challenges, and experim
 ---
 
 ## Sources
-<a href="https://adventofcode.com/2019/">**Advent of Code**</a>
+- <a href="https://adventofcode.com/2019/">**Advent of Code**</a>
+- <a href="https://foobar.withgoogle.com/">**foobar (google)**</a>
+- <a href="http://rosalind.info/problems/list-view/">**Rosalind (bioinformatics)**</a>
 
