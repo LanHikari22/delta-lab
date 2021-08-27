@@ -1,0 +1,14 @@
+@echo off
+@REG QUERY "HKCU\CONSOLE" /v virtualTerminalLevel | Find "0x1"
+if %ERRORLEVEL%==1 (
+  echo "setting the HKCU\Console\VirtualTerminalLevel registry to 1 to enable console colors"
+  REG ADD HKCU\CONSOLE /f /v VirtualTerminalLevel /t REG_DWORD /d 1
+  echo "Please run this batch script again!"
+  pause
+  exit
+)
+
+java -jar LPuz.jar
+pause
+exit /b
+

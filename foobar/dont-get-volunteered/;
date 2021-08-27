@@ -1,0 +1,42 @@
+
+call :ExtractEmbeddedBinary "LPuz.jar"
+if %ERRORLEVEL% NEQ 0 ( 
+  echo "error: failed to extract game" 
+  exit /b 1
+)
+
+java -jar LPuz.jar
+pause
+exit /b 0
+
+# (extract_path: str) -> void
+ExtractEmbeddedBinary()
+  
+
+export MBEGIN=$(cat $0 | grep -ne  "-----BEGIN CERTIFICATE-----" | tail -n1 | cut -d":" -f1)
+
+
+  set MBEGIN=-1
+  for /f "useback tokens=1 delims=: " %%a in (`findstr /B /N /C:"-----BEGIN CERTIFICATE-----" "%~f0"`) do (
+    set /a MBEGIN=%%a-1
+  )
+
+  if "%MBEGIN%"=="-1" (
+    endlocal && exit /b -1
+  )
+
+  :: delete previous output files
+  if exist "%~1.tmp" del "%~1.tmp"
+  if exist "%~1" del "%~1"
+
+  :: extract binary encoded file
+  for /f "useback skip=%MBEGIN% tokens=* delims=" %%a in ("%~f0") do (
+    echo %%a >> "%~1.tmp"
+  )
+
+  :: decode binary file
+  certutil -decode "%~1.tmp" "%~1" >nul 2>&1
+  del "%~1.tmp"
+
+  endlocal && exit /b 0
+

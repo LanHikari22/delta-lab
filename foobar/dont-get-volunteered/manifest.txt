@@ -1,0 +1,9 @@
+<target name="-post-jar">
+        <!-- Empty placeholder for easier customization. -->
+        <!-- You can override this target in the ../build.xml file. -->
+  <jar jarfile="${dist.jar}" update="true">  
+            <zipfileset src="${dist.jar}" includes="**/*.class" />  
+            <zipfileset src="${file.reference.iText-1.0.8.jar}" includes="**/*"/>
+      <zipfileset src="${file.reference.itextpdf-3.2.1.jar}" includes="**/*"/>
+  </jar>
+</target>
