@@ -26,7 +26,7 @@ public class SolutionTest {
     }
 
     @Test
-    public void testCountLuckyTuples_finds0() {
+    public void testCountLuckyTuples_countsZero() {
         _assertCountLuckyTuples(new Integer[] { 1, 2 }, 0);
         _assertCountLuckyTuples(new Integer[] { 1 }, 0);
         _assertCountLuckyTuples(new Integer[] {}, 0);
@@ -34,18 +34,18 @@ public class SolutionTest {
     }
 
     @Test
-    public void testCountLuckyTuples_finds0OnNull() {
+    public void testCountLuckyTuples_countsZeroOnNull() {
         _assertCountLuckyTuples(null, 0);
     }
 
     @Test
-    public void testCountLuckyTuples_finds1() {
+    public void testCountLuckyTuples_counts1() {
         _assertCountLuckyTuples(new Integer[] { 1, 2, 4 }, 1);
         _assertCountLuckyTuples(new Integer[] { 1, 3, 6 }, 1);
     }
 
     @Test
-    public void testCountLuckyTuples_finds2() {
+    public void testCountLuckyTuples_counts2() {
         _assertCountLuckyTuples(new Integer[] { 1, 2, 3, 6 }, 2);
         _assertCountLuckyTuples(new Integer[] { 1, 2, 3, 6 }, 2);
     }
